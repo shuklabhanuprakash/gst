@@ -6,9 +6,9 @@ import com.gst.model.BuyerRequest;
 
 public interface BuyerService {
 	
-	public void registerInfo(BuyerRequest request);
+	public BuyerRequest registerInfo(BuyerRequest request);
 
-	public List<BuyerRequest> getCustomer();
+	public List<BuyerRequest> getBuyers();
 
 	public BuyerRequest getEditCustomer(Integer id);
 

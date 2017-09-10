@@ -15,13 +15,13 @@ public class BuyerServiceImpl implements BuyerService {
 	BuyerDao crudDao;
 
 	@Override
-	public void registerInfo(BuyerRequest request) {
+	public BuyerRequest registerInfo(BuyerRequest request) {
 
-		crudDao.save(request);
+		return crudDao.save(request);
 	}
 
 	@Override
-	public List<BuyerRequest> getCustomer() {
+	public List<BuyerRequest> getBuyers() {
 		return (List<BuyerRequest>) crudDao.findAll();
 	}
 

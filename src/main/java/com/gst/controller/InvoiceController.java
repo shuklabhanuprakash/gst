@@ -104,7 +104,7 @@ public class InvoiceController {
 	@RequestMapping("/editInvoice")
 	public String editInvoice(@RequestParam(value = "id", required = false) Integer id, Model model) {
 		if (null != id) {
-			model.addAttribute("customerList",buyerService.getCustomer());
+			model.addAttribute("customerList",buyerService.getBuyers());
 			model.addAttribute("productList",productService.getProducts());
 			model.addAttribute("editInvoice", invoiceService.getEditInvoiceDetails(id));
 			//model.addAttribute("consignee", consigneeService.getConsigneeByBuyerId(id));

@@ -4,6 +4,6 @@ import com.gst.model.SellerRequest;
 
 public interface SellerService {
 	
-	public void registerInfo(SellerRequest request);
+	public SellerRequest registerInfo(SellerRequest request);
 
 }

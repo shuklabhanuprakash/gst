@@ -1,15 +1,20 @@
 package com.gst.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.gst.model.BuyerRequest;
 import com.gst.model.ProductRequest;
 import com.gst.service.ProductService;
 
@@ -27,25 +32,25 @@ public class ProductController {
 	}
 	
 	
-	@RequestMapping(value="/product",method=RequestMethod.POST)
-	public void registerProduct(@RequestBody ProductRequest requestObj,Model model) {
+	@PostMapping("/product")
+	public ResponseEntity<ProductRequest> registerProduct(@RequestBody ProductRequest requestObj) {
 		productService.registerInfo(requestObj);
-		//return "masters/productMaster";
+		return ResponseEntity.ok(productService.registerInfo(requestObj));
 	}
 	
-	@RequestMapping("/products")
-	public String getProducts(Model model) {
-		model.addAttribute("products",productService.getProducts());
-		return "masters/productMaster";
+	@GetMapping("/products")
+	public ResponseEntity<List<ProductRequest>> getProducts() {
+		return ResponseEntity.ok(productService.getProducts());
 	}
-	/*@RequestMapping(value="/product",method=RequestMethod.GET)
-	public String getProduct(Model model,@RequestParam("id") Integer id) {
-		model.addAttribute("product",productService.getProduct(id));
-		return "masters/productMaster";
-	}*/
+	
+	@GetMapping("/product/{id}")
+	public ResponseEntity<ProductRequest> getProduct(@PathVariable("id") Integer id) {
+		return ResponseEntity.ok(productService.getProduct(id));
+	}
 	@RequestMapping(value="/deleteProduct/{id}",method=RequestMethod.GET)
-	public void deleteProduct(Model model,@PathVariable("id") Integer id) {
+	public ResponseEntity<List<ProductRequest>> deleteProduct(@PathVariable("id") Integer id) {
 		productService.deleteProduct(id);
+		return ResponseEntity.ok(productService.getProducts());
 	}
 	 
 }

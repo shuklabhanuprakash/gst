@@ -15,8 +15,8 @@ public class SellerServiceImpl implements SellerService {
 	SellerDao crudDao;
 
 	@Override
-	public void registerInfo(SellerRequest request) {
-		crudDao.save(request);
+	public SellerRequest registerInfo(SellerRequest request) {
+		return crudDao.save(request);
 		
 	}
 

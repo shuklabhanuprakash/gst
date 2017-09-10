@@ -15,9 +15,9 @@ public class ProductServiceImpl implements ProductService {
 	CrudRepository<ProductRequest, Integer> crudDao;
 
 	@Override
-	public void registerInfo(ProductRequest request) {
+	public ProductRequest registerInfo(ProductRequest request) {
 
-		crudDao.save(request);
+		return crudDao.save(request);
 	}
 
 	@Override
@@ -31,8 +31,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void deleteProduct(Integer id) {
+	public List<ProductRequest> deleteProduct(Integer id) {
 		 crudDao.delete(id);
+		 return (List<ProductRequest>) crudDao.findAll();
 	}
 
 }

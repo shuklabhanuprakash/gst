@@ -1,9 +1,10 @@
 package com.gst.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.gst.model.SellerRequest;
 import com.gst.service.SellerService;
@@ -14,9 +15,8 @@ public class CompanyController {
 	SellerService sellerService;
 
 	
-	@RequestMapping("/sellerMaster.submit")
-	public String registerSellerDetails(SellerRequest requestObj,Model model) {
-		sellerService.registerInfo(requestObj);
-		return "masters/sellerMaster";
+	@PostMapping("/seller")
+	public ResponseEntity<SellerRequest>  registerSellerDetails(SellerRequest requestObj) {
+		return ResponseEntity.ok(sellerService.registerInfo(requestObj));
 	}
 }

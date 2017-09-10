@@ -1,5 +1,7 @@
 package com.gst.model;
 
+import java.io.File;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,34 +15,49 @@ public class SellerRequest {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Column
+	@Column(name="COMPANY_NAME")
 	private String sellerName;
-	@Column
+	@Column(name="ADDRESS_1" )
 	private String address;
-	@Column
+	@Column(name="STATE" )
 	private String state;
-	@Column
-	private String stateCode;
-	@Column
+	@Column(name="CITY" )
+	private String city;
+	@Column(name="PINCODE" )
 	private Integer pinCode;
-	@Column
+	@Column(name="PHONE_NO" )
 	private Long phoneNo;
-	@Column
+	@Column(name="MOBILE_NO" )
+	private Long mobileNo;
+	@Column(name="FAX_NO" )
 	private Integer faxNo;
-	@Column
+	@Column(name="EMAIL_ID" )
 	private String email;
-	@Column
+	@Column(name="GSTIN" )
 	private String gstID;
-	@Column
+	@Column(name="ADDRESS_2")
 	private String address1;
-	@Column
+	@Column (name="COUNTRY")
 	private String country;
-	@Column
+	@Column (name="BRANCH_CODE")
 	private String branchCode;
-	@Column
+	@Column(name="WEBSITE")
 	private String website;
-	@Column
+	@Column(name="VAT_TIN_NO")
 	private String vatNo;
+	@Column(name="PAN_NO")
+	private String panNo;
+	@Column(name="CIN_NO")
+	private String cinNo;
+	@Column(name="SERVICE_TAX_NO")
+	private String serviceTaxNo;
+	@Column(name="SERVICE_CAT")
+	private String serviceCatagory;
+	@Column(name="LOGO")
+	private File companyLogo;
+	@Column(name="STATE_CODE")
+	private File stateCode;
+
 
 	public Integer getId() {
 		return id;
@@ -74,14 +91,7 @@ public class SellerRequest {
 		this.state = state;
 	}
 
-	public String getStateCode() {
-		return stateCode;
-	}
-
-	public void setStateCode(String stateCode) {
-		this.stateCode = stateCode;
-	}
-
+	
 	public Integer getPinCode() {
 		return pinCode;
 	}
@@ -160,6 +170,70 @@ public class SellerRequest {
 
 	public void setVatNo(String vatNo) {
 		this.vatNo = vatNo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public Long getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(Long mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public String getPanNo() {
+		return panNo;
+	}
+
+	public void setPanNo(String panNo) {
+		this.panNo = panNo;
+	}
+
+	public String getCinNo() {
+		return cinNo;
+	}
+
+	public void setCinNo(String cinNo) {
+		this.cinNo = cinNo;
+	}
+
+	public String getServiceTaxNo() {
+		return serviceTaxNo;
+	}
+
+	public void setServiceTaxNo(String serviceTaxNo) {
+		this.serviceTaxNo = serviceTaxNo;
+	}
+
+	public String getServiceCatagory() {
+		return serviceCatagory;
+	}
+
+	public void setServiceCatagory(String serviceCatagory) {
+		this.serviceCatagory = serviceCatagory;
+	}
+
+	public File getCompanyLogo() {
+		return companyLogo;
+	}
+
+	public void setCompanyLogo(File companyLogo) {
+		this.companyLogo = companyLogo;
+	}
+
+	public File getStateCode() {
+		return stateCode;
+	}
+
+	public void setStateCode(File stateCode) {
+		this.stateCode = stateCode;
 	}
 
 }
