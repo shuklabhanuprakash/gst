@@ -4,3 +4,6 @@
 .metadata
 .classpath
 .settings/
+mvnw
+mvnw.cmd
+.mvn
