@@ -26,11 +26,12 @@ public class ApplicationController {
 	@Autowired
     ProductService productService;
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String login(Map<String, Object> model) {
 		companyGstInfo.chkConn();
-		return "login";
-	}
+		return "index";
+	}*/
+	
  //registratrion 
 	@RequestMapping("/registration")
 	public String registration(Map<String, Object> model) {
