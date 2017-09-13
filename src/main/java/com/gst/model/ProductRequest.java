@@ -8,18 +8,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "MA_PRODUCT")
 public class ProductRequest {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Column
+	@Column (name="GOODS_DESC")
 	private String goodsDesc;
-	@Column
+	@Column (name="HSN_CODE")
 	private String hsnCode;
-	@Column
+	@Column (name="TAX_RATE")
 	private Double taxRate;
+	@Column (name="ITEM_NAME")
+	private String itemName;
+	@Column (name="SAC_CODE")
+	private String sacCode;
+	@Column (name="UNIT_OF_MEASURE")
+	private String unitOfMeasure;
+	@Column (name="SKU")
+	private String sku;
+	@Column (name="ITEM_PRICE")
+	private Double itemPrice;
+	@Column (name="CESS")
+	private Double cess;
 
 	public Integer getId() {
 		return id;
@@ -57,6 +69,54 @@ public class ProductRequest {
 	public String toString() {
 		return "ProductRequest [id=" + id + ", goodsDesc=" + goodsDesc
 				+ ", hsnCode=" + hsnCode + ", taxRate=" + taxRate + "]";
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getSacCode() {
+		return sacCode;
+	}
+
+	public void setSacCode(String sacCode) {
+		this.sacCode = sacCode;
+	}
+
+	public String getUnitOfMeasure() {
+		return unitOfMeasure;
+	}
+
+	public void setUnitOfMeasure(String unitOfMeasure) {
+		this.unitOfMeasure = unitOfMeasure;
+	}
+
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public Double getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(Double itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+	public Double getCess() {
+		return cess;
+	}
+
+	public void setCess(Double cess) {
+		this.cess = cess;
 	}
 
 }

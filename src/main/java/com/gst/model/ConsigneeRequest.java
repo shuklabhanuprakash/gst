@@ -13,23 +13,35 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table(name="CONSIGNEE")
+@Table(name="MA_CONSIGNEE")
 public class ConsigneeRequest {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Column
+	@Column(name="GSTIN")
 	private String gstID;
-	@Column
+	@Column(name="CONSIGNEE_COMPANY_NAME")
 	private String cosigneeName;
-	@Column
+	@Column(name="ADDRESS")
 	private String address;
-	@Column
+	@Column(name="ADDRESS_2")
+	private String address2;
+	@Column(name="ADDRESS_3")
+	private String address3;
+	@Column(name="STATE")
 	private String state;
-	@Column
-	private String companyName;
-	@Column
+	@Column(name="CITY")
+	private String city;
+	@Column(name="COUNTRY")
 	private String country;
+	@Column(name="STATE_CODE")
+	private String stateCode;
+	@Column(name="PIN_CODE")
+	private Integer pinCode;
+	@Column(name="CONSIGNEE_CONTACT_NAME")
+	private String consigneeContactName;
+	@Column(name="CONSIGNEE_CONTACT_DETAIL")
+	private String consigneeContactDetail;
 	
 	@JsonBackReference
 	@ManyToOne(fetch= FetchType.LAZY)
@@ -76,14 +88,6 @@ public class ConsigneeRequest {
 		this.state = state;
 	}
 
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
 	public String getCountry() {
 		return country;
 	}
@@ -98,6 +102,62 @@ public class ConsigneeRequest {
 
 	public void setBuyerRequest(BuyerRequest buyerRequest) {
 		this.buyerRequest = buyerRequest;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getAddress3() {
+		return address3;
+	}
+
+	public void setAddress3(String address3) {
+		this.address3 = address3;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getStateCode() {
+		return stateCode;
+	}
+
+	public void setStateCode(String stateCode) {
+		this.stateCode = stateCode;
+	}
+
+	public Integer getPinCode() {
+		return pinCode;
+	}
+
+	public void setPinCode(Integer pinCode) {
+		this.pinCode = pinCode;
+	}
+
+	public String getConsigneeContactName() {
+		return consigneeContactName;
+	}
+
+	public void setConsigneeContactName(String consigneeContactName) {
+		this.consigneeContactName = consigneeContactName;
+	}
+
+	public String getConsigneeContactDetail() {
+		return consigneeContactDetail;
+	}
+
+	public void setConsigneeContactDetail(String consigneeContactDetail) {
+		this.consigneeContactDetail = consigneeContactDetail;
 	}
 
 	

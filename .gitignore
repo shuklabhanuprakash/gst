@@ -1,9 +1,18 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
+
 /target/**
+
 .project
+
 .metadata
+
 .classpath
+
 .settings/
+
 mvnw
+
 mvnw.cmd
+
 .mvn
+Servers/**

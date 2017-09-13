@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "COMPANY")
+@Table(name = "MA_COMPANY")
 public class SellerRequest {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
