@@ -1,5 +1,4 @@
-app.controller("ProductController",function($scope,$http){
-	
+app.controller("ProductController",function($scope,$http,$state){
 	
 	const getProducts =function(){
 		$http.get("/gst/products").then(function(response){
@@ -24,6 +23,7 @@ app.controller("ProductController",function($scope,$http){
 	
 	$scope.init=function(){
 		getProducts();
+		$state.go("master.product.productList");
 	}
 	
 	
