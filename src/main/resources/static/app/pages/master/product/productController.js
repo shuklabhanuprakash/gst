@@ -1,8 +1,8 @@
 app.controller("ProductController",function($scope,$http){
 	
 	
-	$scope.getProducts =function(){
-		$http.get("gst/products").then(function(response){
+	const getProducts =function(){
+		$http.get("/gst/products").then(function(response){
 			console.log(response)
 			$scope.products=response.data;
 			
@@ -12,10 +12,18 @@ app.controller("ProductController",function($scope,$http){
 		
 	}
 	
-	
+	$scope.deleteProduct=function(id){
+		$http.get("/gst/deleteProduct/"+id).then(function(response){
+			console.log(response)
+			$scope.products=response.data;
+			
+		},function(error){
+			console.log("error",error);
+		});
+	}
 	
 	$scope.init=function(){
-		$scope.getProducts();
+		getProducts();
 	}
 	
 	

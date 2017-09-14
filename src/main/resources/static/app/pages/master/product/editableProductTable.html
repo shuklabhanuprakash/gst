@@ -1,53 +1,42 @@
-<div class="add-row-editable-table">
-  <button class="btn btn-primary" ng-click="addUser()">Add row</button>
-</div>
-<table class="table table-bordered table-hover table-condensed">
-  <tr>
-    <td>SrNo.</td>
-    <td>Name</td>
-    <td>Status</td>
-    <td>Group</td>
-    <td>Actions</td>
-  </tr>
-  <tr ng-repeat="product in products" class="editable-row">
-    <td>
-        {{$index}}
-    </td>
-    <td>
-        <span editable-text="user.name" e-name="name" e-form="rowform" e-required>
-          {{ product.goodsDesc }}
-        </span>
-    </td>
-     <td>
-        <span editable-text="user.name" e-name="name" e-form="rowform" e-required>
-          {{ product.itemName }}
-        </span>
-    </td>
-     <td>
-        <span editable-text="user.name" e-name="name" e-form="rowform" e-required>
-          {{ product.hsnCode }}
-        </span>
-    </td>
-     <td>
-        <span editable-text="user.name" e-name="name" e-form="rowform" e-required>
-          {{ product.taxRate }}
-        </span>
-    </td>
-    
-    <td>
-      <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
-        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
-          Save
-        </button>
-        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
-          Cancel
-        </button>
-      </form>
-      <div class="buttons" ng-show="!rowform.$visible">
-        <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
-      </div>
-    </td>
-  </tr>
+<table st-table="productList" st-safe-src="products"
+	class="table table-striped">
+	<thead>
+		<tr>
+			<th><input st-search="" class="form-control"
+				placeholder="Search Here" type="text" /></th>
+				<th colspan="2">
+						<div class="pull-right">
+							<label> Records Per Page</label> <input class="form-control"
+								placeholder="" type="text" ng-model="itemsByPage" />
+						</div>
+					</th>
+		</tr>
+		
+		<tr>
+			<th st-sort="$index">SrNo.</th>
+			<th st-sort="itemName">Name</th>
+			<th st-sort="goodsDesc">Description</th>
+			<th st-sort="hsnCode">HSN Code</th>
+			<th st-sort="taxRate">Tax rate</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="product in productList track by $index">
+		<td>{{$index+1}}</td>
+			<td>{{product.itemName}}</td>
+			<td>{{product.goodsDesc}}</td>
+			<td>{{product.hsnCode}}</td>
+			<td>{{product.taxRate}}</td>
+			<td><a href=""><i class="fa fa-trash-o text-danger" aria-hidden="true"
+							ng-click="deleteProduct(product.id)"></i></a></td>
+		</tr>
+	</tbody>
+	     <tfoot>
+				<tr>
+					<td colspan="100%" class="text-center">
+						<div st-pagination="" st-items-by-page="itemsByPage"></div>
+					</td>
+				</tr>
+			</tfoot>
 </table>
