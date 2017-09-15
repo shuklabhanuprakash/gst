@@ -13,12 +13,22 @@
     $stateProvider
         .state('master.company', {
           url: '/company',
-          templateUrl: 'app/pages/master/company/company.html',
+          templateUrl: 'app/pages/master/company/companyWizardForm.html',
           title: 'Company',
           sidebarMeta: {
-            order: 500,
+            order: 1500,
           },
-        });
-  }
+        }).state('master.company.companyList', {
+			url : '/companyList',
+			templateUrl : 'app/pages/master/company/companyList.html',
+		}).state('master.company.companyRegistration', {
+			url : '/companyRegistration',
+			templateUrl : 'app/pages/master/company/companyRegistration.html',
+			 params: {
+		            id: null
+		        }
+		});
+
+	}
 
 })();

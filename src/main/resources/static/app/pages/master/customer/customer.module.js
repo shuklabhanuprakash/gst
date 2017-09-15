@@ -13,12 +13,22 @@
     $stateProvider
         .state('master.customer', {
           url: '/customer',
-          templateUrl: 'app/pages/master/customer/customer.html',
+          templateUrl: 'app/pages/master/customer/customerWizardForm.html',
           title: 'Customer',
           sidebarMeta: {
-            order: 500,
+            order: 1670,
           },
-        });
-  }
+        }).state('master.customer.customerList', {
+			url : '/customerList',
+			templateUrl : 'app/pages/master/customer/customerList.html',
+		}).state('master.customer.customerRegistration', {
+			url : '/customerRegistration',
+			templateUrl : 'app/pages/master/customer/customerRegistration.html',
+			 params: {
+		            id: null
+		        }
+		});
+
+	}
 
 })();
