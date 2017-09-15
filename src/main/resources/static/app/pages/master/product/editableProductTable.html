@@ -4,14 +4,14 @@
 		<tr>
 			<th><input st-search="" class="form-control"
 				placeholder="Search Here" type="text" /></th>
-				<th colspan="2">
-						<div class="pull-right">
-							<label> Records Per Page</label> <input class="form-control"
-								placeholder="" type="text" ng-model="itemsByPage" />
-						</div>
-					</th>
+			<th colspan="2">
+				<div class="pull-right">
+					<label> Records Per Page</label> <input class="form-control"
+						placeholder="" type="text" ng-model="itemsByPage" />
+				</div>
+			</th>
 		</tr>
-		
+
 		<tr>
 			<th st-sort="$index">SrNo.</th>
 			<th st-sort="itemName">Name</th>
@@ -23,20 +23,22 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="product in productList track by $index">
-		<td>{{$index+1}}</td>
+			<td>{{$index+1}}</td>
 			<td>{{product.itemName}}</td>
 			<td>{{product.goodsDesc}}</td>
 			<td>{{product.hsnCode}}</td>
 			<td>{{product.taxRate}}</td>
-			<td><a href=""><i class="fa fa-trash-o text-danger" aria-hidden="true"
-							ng-click="deleteProduct(product.id)"></i></a></td>
+			<td><a href=""><i class="fa fa-trash-o text-danger"
+					aria-hidden="true" ng-click="deleteProduct(product.id)"></i></a> <a
+				href=""><i class="fa fa-pencil-square-o" aria-hidden="true"
+					ng-click="editProduct(product.id)"></i></a></td>
 		</tr>
 	</tbody>
-	     <tfoot>
-				<tr>
-					<td colspan="100%" class="text-center">
-						<div st-pagination="" st-items-by-page="itemsByPage"></div>
-					</td>
-				</tr>
-			</tfoot>
+	<tfoot>
+		<tr>
+			<td colspan="100%" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage"></div>
+			</td>
+		</tr>
+	</tfoot>
 </table>

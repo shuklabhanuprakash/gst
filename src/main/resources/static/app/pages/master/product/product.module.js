@@ -21,6 +21,9 @@
 		}).state('master.product.productRegistration', {
 			url : '/productRegistration',
 			templateUrl : 'app/pages/master/product/productRegistration.html',
+			 params: {
+		            id: null
+		        }
 		});
 
 	}
