@@ -4,7 +4,7 @@ app.controller("CustomerRegistrationController",function($scope,$http,$statePara
 	$scope.init=function(){
 		
 		if($stateParams.id){
-			$http.get("/gst/product/"+$stateParams.id).then(function(response){
+			$http.get("/gst/buyer/"+$stateParams.id).then(function(response){
 				console.log(response)
 				$scope.product=response.data;
 				//$state.go("master.product.productRegistration", { "id": productId });
@@ -19,7 +19,7 @@ app.controller("CustomerRegistrationController",function($scope,$http,$statePara
 	}
 	
 	$scope.saveProduct=function(){
-		$http.post("/gst/product",$scope.product).then(function(response){
+		$http.post("/gst/buyer",$scope.product).then(function(response){
 			console.log(response)
 			$scope.product=response.data;
 			//$state.go("master.product.productRegistration", { "id": productId });

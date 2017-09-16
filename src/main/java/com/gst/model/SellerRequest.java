@@ -56,7 +56,7 @@ public class SellerRequest {
 	@Column(name="LOGO")
 	private File companyLogo;
 	@Column(name="STATE_CODE")
-	private File stateCode;
+	private String stateCode;
 
 
 	public Integer getId() {
@@ -228,12 +228,13 @@ public class SellerRequest {
 		this.companyLogo = companyLogo;
 	}
 
-	public File getStateCode() {
+	public String getStateCode() {
 		return stateCode;
 	}
 
-	public void setStateCode(File stateCode) {
+	public void setStateCode(String stateCode) {
 		this.stateCode = stateCode;
 	}
 
+	
 }

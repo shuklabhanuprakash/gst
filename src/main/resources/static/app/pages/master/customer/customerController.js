@@ -3,7 +3,7 @@ app.controller("CustomerController",function($scope,$http,$state){
 	$scope.customers=[];
 	
 	const getCustomers =function(){
-		$http.get("/gst/products").then(function(response){
+		$http.get("/gst/buyers").then(function(response){
 			console.log(response)
 			$scope.customers=response.data;
 			
@@ -14,7 +14,7 @@ app.controller("CustomerController",function($scope,$http,$state){
 	}
 	
 	$scope.deleteProduct=function(id){
-		$http.get("/gst/deleteProduct/"+id).then(function(response){
+		$http.get("/gst/deleteBuyer/"+id).then(function(response){
 			console.log(response)
 			$scope.customers=response.data;
 			
