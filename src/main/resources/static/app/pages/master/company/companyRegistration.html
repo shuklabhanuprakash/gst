@@ -4,56 +4,56 @@
   <div class="row">
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="itemName">Company Name</label>
-      <input type="text" ng-model="company.itemName" class="form-control" id="itemName" placeholder="company Name">
+      <label for="sellerName">Company Name</label>
+      <input type="text" ng-model="company.sellerName" class="form-control" id="sellerName" placeholder="Company Name">
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="hsnCode">HSN Code</label>
-      <input type="text" ng-model="company.hsnCode"  class="form-control" id="hsnCode" placeholder="HSN Code">
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="sacCode">SAC Code</label>
-      <input type="text" ng-model="company.sacCode" class="form-control" id="sacCode" placeholder="SAC Code">
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="sku">SKU</label>
-      <input type="text" ng-model="company.sku" class="form-control" id="sku" placeholder="SKU">
+      <label for="vatNo">Tin No.</label>
+      <input type="text" ng-model="company.vatNo"  class="form-control" id="vatNo" placeholder="Tin No.">
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="unitOfMeasure">Unit Of Measure</label>
-      <input type="text" ng-model="company.unitOfMeasure" class="form-control" id="unitOfMeasure" placeholder="Unit Of Measure">
+      <label for="country">Country</label>
+      <input type="text" ng-model="company.country" class="form-control" id="country" placeholder="Country">
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="itemPrice">Price Of Company</label>
-      <input type="text"  ng-model="company.itemPrice" class="form-control" id="itemPrice" placeholder="Price Of company">
+      <label for="gstID">GSTIN</label>
+      <input type="text" ng-model="company.gstID" class="form-control" id="gstID" placeholder="GSTIN">
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="cess">CESS</label>
-      <input type="text"  ng-model="company.cess" class="form-control" id="cess" placeholder="CESS">
+      <label for="address">Address Line 1</label>
+      <input type="text" ng-model="company.address" class="form-control" id="address" placeholder="Address Line 1">
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="taxRate">Tax Rate</label>
-      <input type="text" ng-model="company.taxRate" class="form-control" id="taxRate" placeholder="Tax Rate">
+      <label for="serviceTaxNo">Service Tax No.</label>
+      <input type="text"  ng-model="company.serviceTaxNo" class="form-control" id="serviceTaxNo" placeholder="Service Tax No.">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="address1">Address Line 2</label>
+      <input type="text"  ng-model="company.address1" class="form-control" id="address1" placeholder="Address Line 2">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="serviceCatagory">Service Catagory</label>
+      <input type="text" ng-model="company.serviceCatagory" class="form-control" id="serviceCatagory" placeholder="Service Catagory">
     </div>
   </div>
 </div>
@@ -61,12 +61,90 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="form-group">
-      <label for="itemDesc">Company Description</label>
-     <textarea class="form-control" ng-model="company.goodsDesc" id="itemDesc" placeholder="Company Description"></textarea>
+      <label for="city">City</label>
+     <input class="form-control" ng-model="company.city" id="city" placeholder="City"></input>
     </div>
   </div>
   <div class="col-sm-6">
-   
+    <div class="form-group">
+      <label for="panNo">Pan No.</label>
+     <input class="form-control" ng-model="company.panNo" id="panNo" placeholder="Pan No."></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="state">State</label>
+     <input class="form-control" ng-model="company.state" id="state" placeholder="State"></input>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="cinNo">CIN No.</label>
+     <input class="form-control" ng-model="company.cinNo" id="cinNo" placeholder="CIN No."></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="pinCode">Pin Code</label>
+     <input class="form-control" ng-model="company.pinCode" id="pinCode" placeholder="Pin Code"></input>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="branchCode">Branch Code</label>
+     <input class="form-control" ng-model="company.branchCode" id="branchCode" placeholder="Branch Code"></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="phoneNo">Phone No.</label>
+     <input class="form-control" ng-model="company.phoneNo" id="phoneNo" placeholder="Phone No."></input>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="website">Website</label>
+     <input class="form-control" ng-model="company.website" id="website" placeholder="Website"></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="mobileNo">Mobile No.</label>
+     <input class="form-control" ng-model="company.mobileNo" id="mobileNo" placeholder="Mobile No."></input>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="stateCode">State Code</label>
+     <input class="form-control" ng-model="company.stateCode" id="stateCode" placeholder="State Code"></input>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="faxNo">Fax No.</label>
+     <input class="form-control" ng-model="company.faxNo" id="faxNo" placeholder="Fax No."></input>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="companyLogo">Logo</label>
+     <input class="form-control" ng-model="company.companyLogo" id="companyLogo" placeholder="Company's Logo"></input>
+    </div>
   </div>
 </div>
   

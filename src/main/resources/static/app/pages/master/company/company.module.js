@@ -16,7 +16,7 @@
           templateUrl: 'app/pages/master/company/companyWizardForm.html',
           title: 'Company',
           sidebarMeta: {
-            order: 1500,
+            order: 50,
           },
         }).state('master.company.companyList', {
 			url : '/companyList',

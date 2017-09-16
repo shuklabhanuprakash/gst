@@ -2,6 +2,9 @@ app.controller("CompanyController",function($scope,$http,$state){
 	
 	$scope.sellers=[];
 	
+	
+	$scope.$on('$stateChangeStart', function() {getSellers(); });
+	
 	const getSellers =function(){
 		$http.get("/gst/sellers").then(function(response){
 			console.log(response)
@@ -13,7 +16,7 @@ app.controller("CompanyController",function($scope,$http,$state){
 		
 	}
 	
-	$scope.deleteSeller=function(id){
+	$scope.deleteCompany=function(id){
 		$http.get("/gst/deleteSeller/"+id).then(function(response){
 			console.log(response)
 			$scope.sellers=response.data;
@@ -24,7 +27,7 @@ app.controller("CompanyController",function($scope,$http,$state){
 	}
 	
 	
-	$scope.editProduct=function(sellerId){
+	$scope.editCompany=function(sellerId){
 		$state.go("master.company.companyRegistration", { "id": sellerId });
 		
 		

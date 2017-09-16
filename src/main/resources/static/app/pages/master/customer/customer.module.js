@@ -16,7 +16,7 @@
           templateUrl: 'app/pages/master/customer/customerWizardForm.html',
           title: 'Customer',
           sidebarMeta: {
-            order: 1670,
+            order: 70,
           },
         }).state('master.customer.customerList', {
 			url : '/customerList',

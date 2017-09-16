@@ -13,12 +13,12 @@
 		</tr>
 
 		<tr>
-			<th st-sort="$index">SrNo.</th>
-			<th st-sort="itemName">Name</th>
-			<th st-sort="goodsDesc">Description</th>
-			<th st-sort="hsnCode">HSN Code</th>
-			<th st-sort="taxRate">Tax rate</th>
-			<th>Action</th>
+			<th st-sort="$index"><strong>SrNo.</strong></th>
+			<th st-sort="itemName"><strong>Name</strong></th>
+			<th st-sort="goodsDesc"><strong>Description</strong></th>
+			<th st-sort="hsnCode"><strong>HSN Code</strong></th>
+			<th st-sort="taxRate"><strong>Tax rate</strong></th>
+			<th><strong>Action</strong></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -29,7 +29,7 @@
 			<td>{{product.hsnCode}}</td>
 			<td>{{product.taxRate}}</td>
 			<td><a href=""><i class="fa fa-trash-o text-danger"
-					aria-hidden="true" ng-click="deleteProduct(product.id)"></i></a> <a
+					aria-hidden="true" ng-click="deleteProduct(product.id)"></i></a>&nbsp; &nbsp; <a
 				href=""><i class="fa fa-pencil-square-o" aria-hidden="true"
 					ng-click="editProduct(product.id)"></i></a></td>
 		</tr>

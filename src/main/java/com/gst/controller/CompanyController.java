@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +22,7 @@ public class CompanyController {
 
 	
 	@PostMapping("/seller")
-	public ResponseEntity<SellerRequest>  registerSellerDetails(SellerRequest requestObj) {
+	public ResponseEntity<SellerRequest>  registerSellerDetails(@RequestBody SellerRequest requestObj) {
 		return ResponseEntity.ok(sellerService.registerInfo(requestObj));
 	}
 	
