@@ -42,7 +42,7 @@
   <!-- endinject -->
   <!-- endbuild -->
 </head>
-<body class="custom-body">
+<body class="custom-body" ng-init="init()" ng-controller="MainController">
 <div class="body-bg"></div>
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
@@ -78,6 +78,7 @@
 
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->
+<script src="lib/lodash.js"></script>
 <script src="lib/jquery.js"></script>
 <script src="lib/jquery-ui.js"></script>
 <script src="lib/jquery.easing.js"></script>
