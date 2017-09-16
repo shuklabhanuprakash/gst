@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.gst.model.BuyerRequest;
 import com.gst.model.ProductRequest;
 import com.gst.service.ProductService;
 
@@ -34,7 +32,6 @@ public class ProductController {
 	
 	@PostMapping("/product")
 	public ResponseEntity<ProductRequest> registerProduct(@RequestBody ProductRequest requestObj) {
-		productService.registerInfo(requestObj);
 		return ResponseEntity.ok(productService.registerInfo(requestObj));
 	}
 	
