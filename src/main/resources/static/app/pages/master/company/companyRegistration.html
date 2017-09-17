@@ -1,17 +1,19 @@
 <div ng-init="init()" ng-controller="CompanyRegistrationController">
 
-<form>
+<ng-form name="companyForm" novalidate>
   <div class="row">
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.sellerName.$invalid && !companyForm.sellerName.$pristine }">
       <label for="sellerName">Company Name</label>
-      <input type="text" ng-model="company.sellerName" class="form-control" id="sellerName" placeholder="Company Name">
+      <input type="text" ng-model="company.sellerName" class="form-control" name="sellerName" placeholder="Company Name" required />
+       <p ng-show="companyForm.sellerName.$invalid && !companyForm.sellerName.$pristine" class="help-block">Company Name is required.</p>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.vatNo.$invalid && !companyForm.vatNo.$pristine }">
       <label for="vatNo">Tin No.</label>
-      <input type="text" ng-model="company.vatNo"  class="form-control" id="vatNo" placeholder="Tin No.">
+      <input type="text" ng-model="company.vatNo"  class="form-control" name="vatNo" placeholder="Tin No." required />
+      <p ng-show="companyForm.vatNo.$invalid && !companyForm.vatNo.$pristine" class="help-block">Tin No. is required.</p>
     </div>
   </div>
 </div>
@@ -19,13 +21,14 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label for="country">Country</label>
-      <input type="text" ng-model="company.country" class="form-control" id="country" placeholder="Country">
+      <input type="text" ng-model="company.country" class="form-control" name="country" placeholder="Country">
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.gstID.$invalid && !companyForm.gstID.$pristine }">
       <label for="gstID">GSTIN</label>
-      <input type="text" ng-model="company.gstID" class="form-control" id="gstID" placeholder="GSTIN">
+      <input type="text" ng-model="company.gstID" class="form-control" name="gstID" placeholder="GSTIN" required />
+      <p ng-show="companyForm.gstID.$invalid && !companyForm.gstID.$pristine" class="help-block">GSTIN is required.</p>
     </div>
   </div>
 </div>
@@ -33,13 +36,14 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label for="address">Address Line 1</label>
-      <input type="text" ng-model="company.address" class="form-control" id="address" placeholder="Address Line 1">
+      <input type="text" ng-model="company.address" class="form-control" name="address" placeholder="Address Line 1">
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group"  ng-class="{ 'has-error' : companyForm.serviceTaxNo.$invalid && !companyForm.serviceTaxNo.$pristine }">
       <label for="serviceTaxNo">Service Tax No.</label>
-      <input type="text"  ng-model="company.serviceTaxNo" class="form-control" id="serviceTaxNo" placeholder="Service Tax No.">
+      <input type="text"  ng-model="company.serviceTaxNo" class="form-control" name="serviceTaxNo" placeholder="Service Tax No." required />
+      <p ng-show="companyForm.serviceTaxNo.$invalid && !companyForm.serviceTaxNo.$pristine" class="help-block">Service Tax No. is required.</p>
     </div>
   </div>
 </div>
@@ -47,13 +51,13 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label for="address1">Address Line 2</label>
-      <input type="text"  ng-model="company.address1" class="form-control" id="address1" placeholder="Address Line 2">
+      <input type="text"  ng-model="company.address1" class="form-control" name="address1" placeholder="Address Line 2">
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
       <label for="serviceCatagory">Service Catagory</label>
-      <input type="text" ng-model="company.serviceCatagory" class="form-control" id="serviceCatagory" placeholder="Service Catagory">
+      <input type="text" ng-model="company.serviceCatagory" class="form-control" name="serviceCatagory" placeholder="Service Catagory">
     </div>
   </div>
 </div>
@@ -62,13 +66,14 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label for="city">City</label>
-     <input class="form-control" ng-model="company.city" id="city" placeholder="City"></input>
+     <input class="form-control" ng-model="company.city" name="city" placeholder="City"></input>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.panNo.$invalid && !companyForm.panNo.$pristine }">
       <label for="panNo">Pan No.</label>
-     <input class="form-control" ng-model="company.panNo" id="panNo" placeholder="Pan No."></input>
+     <input class="form-control" ng-model="company.panNo" name="panNo" placeholder="Pan No." required></input>
+     <p ng-show="companyForm.panNo.$invalid && !companyForm.panNo.$pristine" class="help-block">PAN No. is required.</p>
     </div>
   </div>
 </div>
@@ -77,79 +82,85 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label for="state">State</label>
-     <input class="form-control" ng-model="company.state" id="state" placeholder="State"></input>
+     <input class="form-control" ng-model="company.state" name="state" placeholder="State"></input>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
       <label for="cinNo">CIN No.</label>
-     <input class="form-control" ng-model="company.cinNo" id="cinNo" placeholder="CIN No."></input>
+     <input class="form-control" ng-model="company.cinNo" name="cinNo" placeholder="CIN No."></input>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.pinCode.$invalid && !companyForm.pinCode.$pristine }">
       <label for="pinCode">Pin Code</label>
-     <input class="form-control" ng-model="company.pinCode" id="pinCode" placeholder="Pin Code"></input>
+     <input class="form-control" ng-model="company.pinCode" ng-pattern="/^[0-9]*$/" name="pinCode" placeholder="Pin Code" required></input>
+     <p ng-show="companyForm.pinCode.$invalid && !companyForm.pinCode.$pristine" class="help-block">Pincode is required/Invalid.</p>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
       <label for="branchCode">Branch Code</label>
-     <input class="form-control" ng-model="company.branchCode" id="branchCode" placeholder="Branch Code"></input>
+     <input class="form-control" ng-model="company.branchCode" name="branchCode" placeholder="Branch Code"></input>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.phoneNo.$invalid && !companyForm.phoneNo.$pristine }">
       <label for="phoneNo">Phone No.</label>
-     <input class="form-control" ng-model="company.phoneNo" id="phoneNo" placeholder="Phone No."></input>
+     <input class="form-control" ng-model="company.phoneNo" ng-pattern="/^[0-9]*$/"  name="phoneNo" placeholder="Phone No."></input>
+     <p ng-show="companyForm.phoneNo.$invalid && !companyForm.phoneNo.$pristine" class="help-block">Phone No. is required/Invalid.</p>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
       <label for="website">Website</label>
-     <input class="form-control" ng-model="company.website" id="website" placeholder="Website"></input>
+     <input class="form-control" ng-model="company.website" name="website" placeholder="Website"></input>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group"  ng-class="{ 'has-error' : companyForm.mobileNo.$invalid && !companyForm.mobileNo.$pristine }">
       <label for="mobileNo">Mobile No.</label>
-     <input class="form-control" ng-model="company.mobileNo" id="mobileNo" placeholder="Mobile No."></input>
+     <input class="form-control" ng-model="company.mobileNo" ng-pattern="/^[0-9]*$/" name="mobileNo" placeholder="Mobile No." required></input>
+     <p ng-show="companyForm.mobileNo.$invalid && !companyForm.mobileNo.$pristine" class="help-block">Mobile No. is required/Invalid.</p>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.stateCode.$invalid && !companyForm.stateCode.$pristine }">
       <label for="stateCode">State Code</label>
-     <input class="form-control" ng-model="company.stateCode" id="stateCode" placeholder="State Code"></input>
+     <input class="form-control" ng-model="company.stateCode" name="stateCode" placeholder="State Code" required></input>
+     <p ng-show="companyForm.stateCode.$invalid && !companyForm.stateCode.$pristine" class="help-block">State Code is required.</p>
     </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-6">
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : companyForm.faxNo.$invalid && !companyForm.faxNo.$pristine }">
       <label for="faxNo">Fax No.</label>
-     <input class="form-control" ng-model="company.faxNo" id="faxNo" placeholder="Fax No."></input>
+     <input class="form-control" ng-model="company.faxNo" ng-pattern="/^[0-9]*$/" name="faxNo" placeholder="Fax No."></input>
+     <p ng-show="companyForm.faxNo.$invalid && !companyForm.faxNo.$pristine" class="help-block">Fax No. is required/Invalid.</p>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="form-group">
       <label for="companyLogo">Logo</label>
-     <input class="form-control" ng-model="company.companyLogo" id="companyLogo" placeholder="Company's Logo"></input>
+     <input class="form-control" ng-model="company.companyLogo" name="companyLogo" placeholder="Company's Logo"></input>
     </div>
   </div>
 </div>
   
-  <button type="submit" ng-click="saveCompany()" class="btn btn-success">Save</button>
-</form>
+  <button type="submit" ng-click="saveCompany()" ng-disabled="companyForm.$invalid" class="btn btn-success">Save</button>
+  <button type="button" ng-click="goToCompanyList()" class="btn btn-default">Cancel</button>
+</ng-form>
 
 </div>
 
