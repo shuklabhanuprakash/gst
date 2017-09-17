@@ -21,11 +21,19 @@ app.controller("ProductRegistrationController",function($scope,$http,$stateParam
 	$scope.saveProduct=function(){
 		$http.post("/gst/product",$scope.product).then(function(response){
 			console.log(response)
+			const toasterTitle="Product";
+			const toasterMsg="registered successfully";
+			const messageType="success";
+			$scope.openToast(toasterTitle,toasterMsg,messageType);
 			$scope.product=response.data;
 			$state.go("master.product.productList");
 			
 		},function(error){
 			console.log("error",error);
+			const toasterTitle="Product registration failed";
+			const toasterMsg="please try again later.";
+			const messageType="error";
+			$scope.openToast(toasterTitle,toasterMsg,messageType);
 		});
 		
 	}
