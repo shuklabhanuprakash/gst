@@ -2,6 +2,8 @@ app.controller("ProductController",function($scope,$http,$state){
 	
 	$scope.products=[];
 	
+	$scope.$on('$stateChangeStart', function() {getProducts(); });
+	
 	const getProducts =function(){
 		$http.get("/gst/products").then(function(response){
 			console.log(response)

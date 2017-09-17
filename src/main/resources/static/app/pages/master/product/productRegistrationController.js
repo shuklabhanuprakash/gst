@@ -1,4 +1,4 @@
-app.controller("ProductRegistrationController",function($scope,$http,$stateParams ){
+app.controller("ProductRegistrationController",function($scope,$http,$stateParams,$state ){
 	
 	
 	$scope.init=function(){
@@ -22,7 +22,7 @@ app.controller("ProductRegistrationController",function($scope,$http,$stateParam
 		$http.post("/gst/product",$scope.product).then(function(response){
 			console.log(response)
 			$scope.product=response.data;
-			//$state.go("master.product.productRegistration", { "id": productId });
+			$state.go("master.product.productList");
 			
 		},function(error){
 			console.log("error",error);
