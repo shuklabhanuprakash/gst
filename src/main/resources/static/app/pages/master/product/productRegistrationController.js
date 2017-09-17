@@ -26,8 +26,7 @@ app.controller("ProductRegistrationController",function($scope,$http,$stateParam
 			const messageType="success";
 			$scope.openToast(toasterTitle,toasterMsg,messageType);
 			$scope.product=response.data;
-			$state.go("master.product.productList");
-			
+			$scope.goToProductList()
 		},function(error){
 			console.log("error",error);
 			const toasterTitle="Product registration failed";
@@ -36,6 +35,11 @@ app.controller("ProductRegistrationController",function($scope,$http,$stateParam
 			$scope.openToast(toasterTitle,toasterMsg,messageType);
 		});
 		
+	}
+	
+	
+	$scope.goToProductList=function(){
+		$state.go("master.product.productList");
 	}
 	
 });
