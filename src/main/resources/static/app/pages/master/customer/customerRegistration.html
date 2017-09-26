@@ -1,78 +1,142 @@
-<div ng-init="init()" ng-controller="CustomerRegistrationController">
+<div class="widgets">
 
-<form>
-  <div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="itemName">Company Name</label>
-      <input type="text" ng-model="company.itemName" class="form-control" id="itemName" placeholder="company Name">
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="hsnCode">HSN Code</label>
-      <input type="text" ng-model="company.hsnCode"  class="form-control" id="hsnCode" placeholder="HSN Code">
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="sacCode">SAC Code</label>
-      <input type="text" ng-model="company.sacCode" class="form-control" id="sacCode" placeholder="SAC Code">
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="sku">SKU</label>
-      <input type="text" ng-model="company.sku" class="form-control" id="sku" placeholder="SKU">
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="unitOfMeasure">Unit Of Measure</label>
-      <input type="text" ng-model="company.unitOfMeasure" class="form-control" id="unitOfMeasure" placeholder="Unit Of Measure">
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="itemPrice">Price Of Company</label>
-      <input type="text"  ng-model="company.itemPrice" class="form-control" id="itemPrice" placeholder="Price Of company">
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="cess">CESS</label>
-      <input type="text"  ng-model="company.cess" class="form-control" id="cess" placeholder="CESS">
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="taxRate">Tax Rate</label>
-      <input type="text" ng-model="company.taxRate" class="form-control" id="taxRate" placeholder="Tax Rate">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="itemDesc">Company Description</label>
-     <textarea class="form-control" ng-model="company.goodsDesc" id="itemDesc" placeholder="Company Description"></textarea>
-    </div>
-  </div>
-  <div class="col-sm-6">
-   
-  </div>
-</div>
-  
-  <button type="submit" ng-click="saveCompany()" class="btn btn-success">Save</button>
-</form>
-
-</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div ba-panel ba-panel-title="Form Wizard"
+				ba-panel-class="with-scroll">
+				<ba-wizard> <ba-wizard-step title="Customer's Details"
+					form="vm.customerForm">
+				<form name="vm.customerForm" novalidate>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.customerForm.customerName.$invalid && (vm.customerForm.customerName.$dirty || vm.customerForm.$submitted)}">
+								<label for="companyName">Customer Name</label> <input type="text"
+									class="form-control" id="customerName" name="customerName"
+									placeholder="Customer Name" ng-model="customer.customerName" required>
+								<span class="help-block error-block basic-block">Required</span>
+							</div>
 
 
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.customerForm.state.$invalid && (vm.customerForm.state.$dirty || vm.customerForm.$submitted)}">
+								<label for="state">State</label> <input type="text"
+									class="form-control" id="state" name="state"
+									placeholder="Username" ng-model="customer.state" required>
+								<span class="help-block error-block basic-block">Required</span>
+							</div>
+							
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.customerForm.pinCode.$invalid && (vm.customerForm.pinCode.$dirty || vm.customerForm.$submitted)}">
+								<label for="pinCode">Pin Code</label> <input type="text"
+									class="form-control" id="pinCode" name="pinCode"
+									placeholder="Username" ng-model="customer.pinCode" required>
+								<span class="help-block error-block basic-block">Required</span>
+							</div>
+							
+						</div>
+						<div class="col-md-6">
+
+							
+
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.customerForm.phoneNumber.$invalid && (vm.customerForm.phoneNumber.$dirty || vm.customerForm.$submitted)}">
+								<label for="phoneNumber">Phone No.</label> <input type="text"
+									class="form-control" id="phoneNumber" name="phoneNumber"
+									placeholder="Phone Number" ng-model="customer.phoneNumber"
+									required> <span
+									class="help-block error-block basic-block">Required</span>
+							</div>
+
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.customerForm.faxNumber.$invalid && (vm.customerForm.faxNumber.$dirty || vm.customerForm.$submitted)}">
+								<label for="faxNumber">Fax No.</label> <input type="text"
+									class="form-control" id="faxNumber" name="faxNumber"
+									placeholder="Fax Number" ng-model="customer.faxNumber" required>
+								<span class="help-block error-block basic-block">Required</span>
+							</div>
+
+							<div class="form-group"
+								ng-class="{'has-error': vm.customerForm.email.$invalid && (vm.customerForm.email.$dirty || vm.customerForm.$submitted)}">
+								<label for="email">Email address</label> <input type="email"
+									class="form-control" id="email" name="email"
+									placeholder="Email" ng-model="customer.email" required>
+								<span class="help-block error-block basic-block">Proper
+									email required</span>
+							</div>
+
+						</div>
+
+					</div>
+				</form>
+				</ba-wizard-step> <ba-wizard-step title="Product Info" form="vm.productInfoForm">
+				<form name="vm.productInfoForm" novalidate>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.productInfoForm.productName.$invalid && (vm.productInfoForm.productName.$dirty || vm.productInfoForm.$submitted)}">
+								<label for="productName">Product name</label> <input type="text"
+									class="form-control" id="productName" name="productName"
+									placeholder="Product name"
+									ng-model="vm.productInfo.productName" required> <span
+									class="help-block error-block basic-block">Required</span>
+							</div>
+							<div class="form-group"
+								ng-class="{'has-error': vm.productInfoForm.productId.$invalid && (vm.productInfoForm.productId.$dirty || vm.productInfoForm.$submitted)}">
+								<label for="productId">Product id</label> <input type="text"
+									class="form-control" id="productId" name="productId"
+									placeholder="productId" ng-model="vm.productInfo.productId"
+									required> <span
+									class="help-block error-block basic-block">Required</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="productName">Category</label> <select
+									class="form-control" title="Category" selectpicker>
+									<option selected>Electronics</option>
+									<option>Toys</option>
+									<option>Accessories</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</form>
+				</ba-wizard-step> <ba-wizard-step title="Shipment" form="vm.addressForm">
+				<form name="vm.addressForm" novalidate>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group has-feedback"
+								ng-class="{'has-error': vm.addressForm.address.$invalid && (vm.addressForm.address.$dirty || vm.addressForm.$submitted)}">
+								<label for="productName">Shipment address</label> <input
+									type="text" class="form-control" id="address" name="address"
+									placeholder="Shipment address" ng-model="vm.shipment.address"
+									required> <span
+									class="help-block error-block basic-block">Required</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="productName">Shipment method</label> <select
+									class="form-control" title="Category" selectpicker>
+									<option selected>Fast & expensive</option>
+									<option>Cheap & free</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="checkbox">
+						<label class="custom-checkbox"> <input type="checkbox">
+							<span>Save shipment info</span>
+						</label>
+					</div>
+				</form>
+				</ba-wizard-step> <ba-wizard-step title="Finish">
+				<form class="form-horizontal" name="vm.finishForm" novalidate>
+					Congratulations! You have successfully filled the form!</form>
+				</ba-wizard-step> </ba-wizard>
+			</div>
+		</div>
+	</div>
+
+</div>
