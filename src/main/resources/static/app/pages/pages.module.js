@@ -10,6 +10,7 @@
 
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.master',
+    'BlurAdmin.pages.invoices',
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.components',
     'BlurAdmin.pages.form',

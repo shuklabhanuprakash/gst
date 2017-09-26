@@ -1,0 +1,33 @@
+<section ng-init="init()" ng-controller="SalesInvoiceController">
+
+<div class="row">
+		<div class="steps">
+			<div class="contents-box">
+
+				<div class="nav-indicator">
+					<a ui-sref-active="active" ui-sref="invoices.salesInvoice.salesInvoiceList">
+						<span class=""><i class="fa fa-list"></i></span>
+						<div>Sales Invoice List</div>
+					</a>
+				</div>
+				
+				
+				<div class="nav-indicator">
+					<a ui-sref-active="active"
+						ui-sref="invoices.salesInvoice.salesInvoiceRegistration"> <span class=""><i
+							class="fa fa-plus" aria-hidden="true"></i></span>
+						<div>Sales Invoice Registration</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+
+	<div class="row">
+		<form id="signup-form">
+			<div id="form-views" ui-view></div>
+		</form>
+	</div>
+
+	</section>
