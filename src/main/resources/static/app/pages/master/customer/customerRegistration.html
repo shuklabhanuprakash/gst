@@ -1,4 +1,4 @@
-<div class="widgets">
+<div class="widgets" ng-controller="CustomerRegistrationController">
 
 	<div class="row">
 		<div class="col-md-12">
@@ -101,12 +101,12 @@
 
 					</div>
 				</form>
-				</ba-wizard-step> <ba-wizard-step title="Billing Address Details" form="customerForm">
-				<form name="customerForm" novalidate>
+				</ba-wizard-step> <ba-wizard-step title="Billing Address Details" form="billingForm">
+				<form name="billingForm" novalidate>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': customerForm.billAddress.$invalid && (customerForm.billAddress.$dirty || customerForm.$submitted)}">
+								ng-class="{'has-error': billingForm.billAddress.$invalid && (billingForm.billAddress.$dirty || billingForm.$submitted)}">
 								<label for="billAddress">Address Line 1</label> <input
 									type="text" class="form-control" id="billAddress"
 									name="billAddress" placeholder="Address Line 1"
@@ -115,7 +115,7 @@
 							</div>
 
 							<div class="form-group"
-								ng-class="{'has-error': customerForm.billCountry.$invalid && (customerForm.billCountry.$dirty || customerForm.$submitted)}">
+								ng-class="{'has-error': billingForm.billCountry.$invalid && (billingForm.billCountry.$dirty || billingForm.$submitted)}">
 								<label for="billCountry">Country</label> <input type="text"
 									class="form-control" id="billCountry" name="billCountry"
 									placeholder="Country" ng-model="customer.billCountry" required>
@@ -123,7 +123,7 @@
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': customerForm.billCity.$invalid && (customerForm.billCity.$dirty || customerForm.$submitted)}">
+								ng-class="{'has-error': billingForm.billCity.$invalid && (billingForm.billCity.$dirty || billingForm.$submitted)}">
 								<label for="billCity">City</label> <input type="text"
 									class="form-control" id="billCity" name="billCity"
 									placeholder="City" ng-model="customer.billCity" required>
@@ -134,7 +134,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': customerForm.billAddress1.$invalid && (customerForm.billAddress1.$dirty || customerForm.$submitted)}">
+								ng-class="{'has-error': billingForm.billAddress1.$invalid && (billingForm.billAddress1.$dirty || billingForm.$submitted)}">
 								<label for="billAddress1">Address Line 2</label> <input
 									type="text" class="form-control" id="billAddress1"
 									name="billAddress1" placeholder="Address Line 2"
@@ -143,7 +143,7 @@
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': customerForm.billState.$invalid && (customerForm.billState.$dirty || customerForm.$submitted)}">
+								ng-class="{'has-error': billingForm.billState.$invalid && (billingForm.billState.$dirty || billingForm.$submitted)}">
 								<label for="billState">Sate</label> <input type="text"
 									class="form-control" id="billState" name="billState"
 									placeholder="State" ng-model="customer.billState" required>
@@ -153,19 +153,20 @@
 						</div>
 					</div>
 				</form>
-				</ba-wizard-step> <ba-wizard-step title="Shipping Address Detail" form="customer">
-				<form name="customer" novalidate>
+				</ba-wizard-step> <ba-wizard-step title="Shipping Address Detail" form="shippingForm">
+				<form name="shippingForm" novalidate>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group has-feedback"
 								ng-class="{'has-error': customer.addresss.$invalid && (customer.address.$dirty || customer.$submitted)}">
 								<label for="address">Address Line 1</label> <input type="text"
-									class="form-control" id="address" name="billAddress"
+									class="form-control" id="address" ng-model="customer.address" name="billAddress"
 									placeholder="Address Line 1" 
 									required> <span
 									class="help-block error-block basic-block">Required</span>
 							</div>
 
+						
 							<div class="form-group has-feedback"
 								ng-class="{'has-error': customer.country.$invalid && (customer.country.$dirty || customer.$submitted)}">
 								<label for="country">Country</label> <input type="text"
@@ -206,119 +207,119 @@
 					</div>
 
 				</form>
-				</ba-wizard-step> <ba-wizard-step title="Other Details" form="vm.finishForm">
-				<form name="vm.finishForm" novalidate>
+				</ba-wizard-step> <ba-wizard-step title="Other Details" form="otherDetailsForm">
+				<form name="otherDetailsForm" novalidate>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.mobileNo.$invalid && (vm.finishForm.mobileNo.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.mobileNo.$invalid && (otherDetailsForm.mobileNo.$dirty || otherDetailsForm.$submitted)}">
 								<label for="mobileNo">Mobile No.</label> <input type="text"
 									class="form-control" id="mobileNo" name="mobileNo"
-									placeholder="Mobile No." ng-model="vm.finishForm.mobileNo"
+									placeholder="Mobile No." ng-model="otherDetailsForm.mobileNo"
 									required> <span
 									class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group"
-								ng-class="{'has-error': vm.finishForm.faxNo.$invalid && (vm.finishForm.faxNo.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.faxNo.$invalid && (otherDetailsForm.faxNo.$dirty || otherDetailsForm.$submitted)}">
 								<label for="faxNo">Fax No.</label> <input type="text"
 									class="form-control" id="faxNo" name="faxNo"
-									placeholder="Fax No." ng-model="vm.finishForm.faxNo" required>
+									placeholder="Fax No." ng-model="otherDetailsForm.faxNo" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactPerson.$invalid && (vm.finishForm.primaryContactPerson.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactPerson.$invalid && (otherDetailsForm.primaryContactPerson.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactPerson">Primary Contact Person</label>
 								<input type="text" class="form-control"
 									id="primaryContactPerson" name="primaryContactPerson"
 									placeholder="primaryContactPerson"
-									ng-model="vm.finishForm.primaryContactPerson" required>
+									ng-model="otherDetailsForm.primaryContactPerson" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactDesignation.$invalid && (vm.finishForm.primaryContactDesignation.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactDesignation.$invalid && (otherDetailsForm.primaryContactDesignation.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactDesignation">Designation</label> <input
 									type="text" class="form-control" id="primaryContactDesignation"
 									name="primaryContactDesignation" placeholder="Designation"
-									ng-model="vm.finishForm.primaryContactDesignation" required>
+									ng-model="otherDetailsForm.primaryContactDesignation" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactMobileNo.$invalid && (vm.finishForm.primaryContactMobileNo.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactMobileNo.$invalid && (otherDetailsForm.primaryContactMobileNo.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactMobileNo">Primary Contact
 									Mobile No.</label> <input type="text" class="form-control"
 									id="primaryContactMobileNo" name="primaryContactMobileNo"
 									placeholder="Primary Contact Mobile No."
-									ng-model="vm.finishForm.primaryContactMobileNo" required>
+									ng-model="otherDetailsForm.primaryContactMobileNo" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.privateClientNote.$invalid && (vm.finishForm.privateClientNote.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.privateClientNote.$invalid && (otherDetailsForm.privateClientNote.$dirty || otherDetailsForm.$submitted)}">
 								<label for="privateClientNote">Private Client Note</label>
 								<textarea type="text" class="form-control"
 									id="privateClientNote" name="privateClientNote"
 									placeholder="Private Client Note"
-									ng-model="vm.finishForm.privateClientNote" required></textarea>
+									ng-model="otherDetailsForm.privateClientNote" required></textarea>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 						</div>
 						<div class="col-md-6">
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactPhoneNo.$invalid && (vm.finishForm.primaryContactPhoneNo.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactPhoneNo.$invalid && (otherDetailsForm.primaryContactPhoneNo.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactPhoneNo">Primary Contact Phone
 									No.</label> <input type="text" class="form-control"
 									id="primaryContactPhoneNo" name="primaryContactPhoneNo"
 									placeholder="Primary Contact Phone No."
-									ng-model="vm.finishForm.primaryContactPhoneNo" required>
+									ng-model="otherDetailsForm.primaryContactPhoneNo" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactSkype.$invalid && (vm.finishForm.primaryContactSkype.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactSkype.$invalid && (otherDetailsForm.primaryContactSkype.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactSkype">Skype Id</label> <input
 									type="text" class="form-control" id="primaryContactSkype"
 									name="primaryContactSkype" placeholder="Skype Id"
-									ng-model="vm.finishForm.primaryContactSkype" required>
+									ng-model="otherDetailsForm.primaryContactSkype" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.website.$invalid && (vm.finishForm.website.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.website.$invalid && (otherDetailsForm.website.$dirty || otherDetailsForm.$submitted)}">
 								<label for="website">Website</label> <input type="text"
 									class="form-control" id="website" name="website"
-									placeholder="Website" ng-model="vm.finishForm.website" required>
+									placeholder="Website" ng-model="otherDetailsForm.website" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.currency.$invalid && (vm.finishForm.currency.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.currency.$invalid && (otherDetailsForm.currency.$dirty || otherDetailsForm.$submitted)}">
 								<label for="currency">Currency</label> <input type="text"
 									class="form-control" id="currency" name="currency"
-									placeholder="Currency" ng-model="vm.finishForm.currency"
+									placeholder="Currency" ng-model="otherDetailsForm.currency"
 									required> <span
 									class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.primaryContactDepartment.$invalid && (vm.finishForm.primaryContactDepartment.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.primaryContactDepartment.$invalid && (otherDetailsForm.primaryContactDepartment.$dirty || otherDetailsForm.$submitted)}">
 								<label for="primaryContactDepartment">Department</label> <input
 									type="text" class="form-control" id="primaryContactDepartment"
 									name="currency" placeholder="Department"
-									ng-model="vm.finishForm.primaryContactDepartment" required>
+									ng-model="otherDetailsForm.primaryContactDepartment" required>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
 							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.finishForm.otherClientNote.$invalid && (vm.finishForm.otherClientNote.$dirty || vm.finishForm.$submitted)}">
+								ng-class="{'has-error': otherDetailsForm.otherClientNote.$invalid && (otherDetailsForm.otherClientNote.$dirty || otherDetailsForm.$submitted)}">
 								<label for="otherClientNote">Other Client Note</label>
 								<textarea type="text" class="form-control" id="otherClientNote"
 									name="currency" placeholder="Other Client Note"
-									ng-model="vm.finishForm.otherClientNote" required></textarea>
+									ng-model="otherDetailsForm.otherClientNote" required></textarea>
 								<span class="help-block error-block basic-block">Required</span>
 							</div>
 
@@ -326,6 +327,37 @@
 						</div>
 
 					</div>
+				</form>
+				</ba-wizard-step> 
+				<ba-wizard-step title="Other Details" form="consigneeForm">
+
+				<form name="consigneeForm" novalidate>
+					<div class="row">
+
+						<div class="col-md-6">
+							<div class="form-group has-feedback">
+								<div class="col-md-8">
+									<ui-select ng-model="selectedConsignee.selected"
+										on-select="searchConsignee($item)" theme="bootstrap">
+									<ui-select-match placeholder="Search Consignee">{{$select.selected.color}}</ui-select-match>
+									<ui-select-choices
+										repeat="item in allConsignees | filter: $select.search|  limitTo: '20'">
+									<div>{{item.color}}</div>
+									<small>{{item.value}}</small> </ui-select-choices> </ui-select>
+								</div>
+								<div class="col-md-4">
+
+									<button type="button" class="btn btn-primary"
+										data-toggle="modal"
+										ng-click="open('app/pages/master/customer/consignee.html', 'lg')">
+										Add Consignee</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6"></div>
+					</div>
+					
 				</form>
 				</ba-wizard-step> </ba-wizard>
 			</div>
