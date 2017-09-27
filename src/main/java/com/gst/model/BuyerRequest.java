@@ -24,7 +24,7 @@ public class BuyerRequest {
 	private String gstID;
 	@Column (name="CLIENT_NAME")
 	private String buyerName;
-	@Column (name="STATE")
+	@Column (name="SHIP_STATE")
 	private String state;
 	@Column (name="STATE_CODE")
 	private String stateCode;
@@ -75,7 +75,7 @@ public class BuyerRequest {
 	@Column (name="PRIVATE_CLIENT_DETAIL_NOTE")
 	private String privateClientNote;
 	@Column (name="OTHER_CLIENT_DETAIL_NOTE")
-	private String otherClientnote;
+	private String otherClientNote;
 	@Column  (name="BILL_ADDRESS_1")
 	private String billAddress;
 	@Column (name="BILL_ADDRESS_2")
@@ -334,13 +334,7 @@ public class BuyerRequest {
 		this.privateClientNote = privateClientNote;
 	}
 
-	public String getOtherClientnote() {
-		return otherClientnote;
-	}
-
-	public void setOtherClientnote(String otherClientnote) {
-		this.otherClientnote = otherClientnote;
-	}
+	
 
 	public String getBillAddress() {
 		return billAddress;
@@ -388,6 +382,14 @@ public class BuyerRequest {
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	public String getOtherClientNote() {
+		return otherClientNote;
+	}
+
+	public void setOtherClientNote(String otherClientNote) {
+		this.otherClientNote = otherClientNote;
 	}
 
 	/*public InvoiceDetailsRequest getCustomerId() {

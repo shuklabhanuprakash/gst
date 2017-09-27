@@ -3,6 +3,8 @@ app.controller("ProductController", function($scope, $http, $state,toastr,
 
 	$scope.products = [];
 	var openedToasts = [];
+	 var defaultConfig = angular.copy(toastrConfig);
+	
 	$scope.options = {
 		autoDismiss : false,
 		positionClass : 'toast-top-center',
