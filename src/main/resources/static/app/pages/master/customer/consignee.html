@@ -3,12 +3,107 @@
     <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
       <em class="ion-ios-close-empty sn-link-close"></em>
     </button>
-    <h4 class="modal-title">Modal title</h4>
+    <h4 class="modal-title">Consignee Details</h4>
   </div>
   <div class="modal-body">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-    dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-    suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+   <div ng-init="init()" ng-controller="ProductRegistrationController">
+
+<ng-form name="consigneeForm" novalidate>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : consigneeForm.cosigneeName.$invalid && !consigneeForm.cosigneeName.$pristine }">
+      <label for="cosigneeName">Consignee Name</label>
+      <input type="text" ng-model="consignee.cosigneeName" class="form-control" name="cosigneeName" placeholder="Consignee Name" required />
+      <p ng-show="consigneeForm.itemName.$invalid && !consigneeForm.itemName.$pristine" class="help-block">Product Name is required.</p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : consigneeForm.gstID.$invalid && !consigneeForm.gstID.$pristine }">
+      <label for="gstID">GSTIN</label>
+      <input type="text" ng-model="consignee.gstID"  class="form-control" name="gstID" placeholder="GSTIN" required />
+      <p ng-show="consigneeForm.hsnCode.$invalid && !consigneeForm.hsnCode.$pristine" class="help-block">HSN Code is required.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="address">Address Line 1</label>
+      <input type="text" ng-model="consignee.address" class="form-control" name="address" placeholder="Address Line 1" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="address2">Address Line 2</label>
+      <input type="text" ng-model="consignee.address2" class="form-control" name="address2" placeholder="Address Line 2" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" >
+      <label for="address3">Address Line 3</label>
+      <input type="text" ng-model="consignee.address3" class="form-control" name="address3" placeholder="Address Line 3" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" >
+      <label for="country">Country</label>
+      <input type="text"  ng-model="consignee.country" class="form-control" name="country" placeholder="Country" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" >
+      <label for="state">State</label>
+      <input type="text"  ng-model="consignee.state" class="form-control" name="state" placeholder="State">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" ng-model="consignee.city" class="form-control" name="city" placeholder="City"  />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="stateCode">State Code</label>
+     <input class="form-control" ng-model="consignee.stateCode" name="stateCode" placeholder="State Code" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" >
+      <label for="pinCode">Pin Code</label>
+      <input type="text" ng-model="consignee.pinCode" class="form-control" name="pinCode" placeholder="Pin Code"  />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="consigneeContactName">Contact Name</label>
+     <input class="form-control" ng-model="consignee.consigneeContactName" name="consigneeContactName" placeholder="Contact Name" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" >
+      <label for="consigneeContactDetail">Contact Details</label>
+      <input type="text" ng-model="consignee.consigneeContactDetail" class="form-control" name="consigneeContactDetail" placeholder="Contact Details"  />
+    </div>
+  </div>
+</div>
+  
+  
+</ng-form>
+</div>
+
+
+
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" ng-click="$dismiss()">Save changes</button>
