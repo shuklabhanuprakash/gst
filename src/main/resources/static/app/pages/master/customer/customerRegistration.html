@@ -2,364 +2,354 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			<div ba-panel ba-panel-title="Form Wizard"
+			<div ba-panel ba-panel-title="Customer Registration"
 				ba-panel-class="with-scroll">
 				<ba-wizard> <ba-wizard-step title="Customer's Details"
-					form="vm.customerForm">
-				<form name="vm.customerForm" novalidate>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.buyerName.$invalid && (vm.customerForm.buyerName.$dirty || vm.customerForm.$submitted)}">
-								<label for="buyerName">Customer Name</label> <input type="text"
-									class="form-control" id="buyerName" name="buyerName"
-									placeholder="Customer Name" ng-model="customer.buyerName"
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.stateCode.$invalid && (vm.customerForm.stateCode.$dirty || vm.customerForm.$submitted)}">
-								<label for="stateCode">State Code</label> <input type="text"
-									class="form-control" id="stateCode" name="stateCode"
-									placeholder="Sate Code" ng-model="customer.stateCode" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.branchCode.$invalid && (vm.customerForm.branchCode.$dirty || vm.customerForm.$submitted)}">
-								<label for="branchCode">Branch Code</label> <input type="text"
-									class="form-control" id="branchCode" name="branchCode"
-									placeholder="Branch Code" ng-model="customer.branchCode"
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.pinCode.$invalid && (vm.customerForm.pinCode.$dirty || vm.customerForm.$submitted)}">
-								<label for="pinCode">Pin Code</label> <input type="text"
-									class="form-control" id="pinCode" name="pinCode"
-									placeholder="Pin Code" ng-model="customer.pinCode" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.taxCat.$invalid && (vm.customerForm.taxCat.$dirty || vm.customerForm.$submitted)}">
-								<label for="taxCat">Tax Category</label> <input type="text"
-									class="form-control" id="taxCat" name="taxCat"
-									placeholder="Tax Category" ng-model="customer.taxCat" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
+					form="customerForm"> <ng-form name="customerForm"
+					novalidate>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.buyerName.$invalid && (customerForm.buyerName.$dirty || customerForm.$submitted)}">
+							<label for="buyerName">Customer Name</label> <input type="text"
+								class="form-control" id="buyerName" name="buyerName"
+								placeholder="Customer Name" ng-model="customer.buyerName"
+								required> <span
+								class="help-block error-block basic-block">Required</span>
 						</div>
-						<div class="col-md-6">
 
 
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.stateCode.$invalid && (customerForm.stateCode.$dirty || customerForm.$submitted)}">
+							<label for="stateCode">State Code</label> <input type="text"
+								class="form-control" id="stateCode" name="stateCode"
+								placeholder="Sate Code" ng-model="customer.stateCode" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.gstID.$invalid && (vm.customerForm.gstID.$dirty || vm.customerForm.$submitted)}">
-								<label for="gstID">GSTIN</label> <input type="text"
-									class="form-control" id="gstID" name="gstID"
-									placeholder="GSTIN" ng-model="customer.gstID" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.branchCode.$invalid && (customerForm.branchCode.$dirty || customerForm.$submitted)}">
+							<label for="branchCode">Branch Code</label> <input type="text"
+								class="form-control" id="branchCode" name="branchCode"
+								placeholder="Branch Code" ng-model="customer.branchCode"
+								required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': vm.customerForm.vatNo.$invalid && (vm.customerForm.vatNo.$dirty || vm.customerForm.$submitted)}">
-								<label for="vatNo">Vat No.</label> <input type="text"
-									class="form-control" id="vatNo" name="vatNo"
-									placeholder="Vat No." ng-model="customer.vatNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.pinCode.$invalid && (customerForm.pinCode.$dirty || customerForm.$submitted)}">
+							<label for="pinCode">Pin Code</label> <input type="text"
+								class="form-control" id="pinCode" name="pinCode"
+								placeholder="Pin Code" ng-model="customer.pinCode" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
 
-							<div class="form-group"
-								ng-class="{'has-error': vm.customerForm.tinNo.$invalid && (vm.customerForm.tinNo.$dirty || vm.customerForm.$submitted)}">
-								<label for="tinNo">Tin No.</label> <input type="text"
-									class="form-control" id="tinNo" name="tinNo"
-									placeholder="Tin No" ng-model="customer.tinNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group"
-								ng-class="{'has-error': vm.customerForm.panNo.$invalid && (vm.customerForm.panNo.$dirty || vm.customerForm.$submitted)}">
-								<label for="panNo">Pan No.</label> <input type="text"
-									class="form-control" id="panNo" name="panNo"
-									placeholder="Pan No." ng-model="customer.panNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group"
-								ng-class="{'has-error': vm.customerForm.phoneNo.$invalid && (vm.customerForm.phoneNo.$dirty || vm.customerForm.$submitted)}">
-								<label for="phoneNo">Phone No.</label> <input type="text"
-									class="form-control" id="phoneNo" name="phoneNo"
-									placeholder="Phone No." ng-model="customer.phoneNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.taxCat.$invalid && (customerForm.taxCat.$dirty || customerForm.$submitted)}">
+							<label for="taxCat">Tax Category</label> <input type="text"
+								class="form-control" id="taxCat" name="taxCat"
+								placeholder="Tax Category" ng-model="customer.taxCat" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
 
 					</div>
-				</form>
-				</ba-wizard-step> <ba-wizard-step title="Billing Address Details" form="billingForm">
-				<form name="billingForm" novalidate>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': billingForm.billAddress.$invalid && (billingForm.billAddress.$dirty || billingForm.$submitted)}">
-								<label for="billAddress">Address Line 1</label> <input
-									type="text" class="form-control" id="billAddress"
-									name="billAddress" placeholder="Address Line 1"
-									ng-model="customer.billAddress" required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group"
-								ng-class="{'has-error': billingForm.billCountry.$invalid && (billingForm.billCountry.$dirty || billingForm.$submitted)}">
-								<label for="billCountry">Country</label> <input type="text"
-									class="form-control" id="billCountry" name="billCountry"
-									placeholder="Country" ng-model="customer.billCountry" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': billingForm.billCity.$invalid && (billingForm.billCity.$dirty || billingForm.$submitted)}">
-								<label for="billCity">City</label> <input type="text"
-									class="form-control" id="billCity" name="billCity"
-									placeholder="City" ng-model="customer.billCity" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+					<div class="col-md-6">
 
 
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.gstID.$invalid && (customerForm.gstID.$dirty || customerForm.$submitted)}">
+							<label for="gstID">GSTIN</label> <input type="text"
+								class="form-control" id="gstID" name="gstID" placeholder="GSTIN"
+								ng-model="customer.gstID" required> <span
+								class="help-block error-block basic-block">Required</span>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': billingForm.billAddress1.$invalid && (billingForm.billAddress1.$dirty || billingForm.$submitted)}">
-								<label for="billAddress1">Address Line 2</label> <input
-									type="text" class="form-control" id="billAddress1"
-									name="billAddress1" placeholder="Address Line 2"
-									ng-model="customer.billAddress1" required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': billingForm.billState.$invalid && (billingForm.billState.$dirty || billingForm.$submitted)}">
-								<label for="billState">Sate</label> <input type="text"
-									class="form-control" id="billState" name="billState"
-									placeholder="State" ng-model="customer.billState" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerForm.vatNo.$invalid && (customerForm.vatNo.$dirty || customerForm.$submitted)}">
+							<label for="vatNo">Vat No.</label> <input type="text"
+								class="form-control" id="vatNo" name="vatNo"
+								placeholder="Vat No." ng-model="customer.vatNo" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
-					</div>
-				</form>
-				</ba-wizard-step> <ba-wizard-step title="Shipping Address Detail" form="shippingForm">
-				<form name="shippingForm" novalidate>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': customer.addresss.$invalid && (customer.address.$dirty || customer.$submitted)}">
-								<label for="address">Address Line 1</label> <input type="text"
-									class="form-control" id="address" ng-model="customer.address" name="billAddress"
-									placeholder="Address Line 1" 
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
 
-						
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': customer.country.$invalid && (customer.country.$dirty || customer.$submitted)}">
-								<label for="country">Country</label> <input type="text"
-									class="form-control" id="country" name="country"
-									placeholder="Country" ng-model="customer.country" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': customer.city.$invalid && (customer.city.$dirty || customer.$submitted)}">
-								<label for="city">City</label> <input type="text"
-									class="form-control" id="city" name="city" placeholder="City"
-									ng-model="customer.city" required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
+						<div class="form-group"
+							ng-class="{'has-error': customerForm.tinNo.$invalid && (customerForm.tinNo.$dirty || customerForm.$submitted)}">
+							<label for="tinNo">Tin No.</label> <input type="text"
+								class="form-control" id="tinNo" name="tinNo"
+								placeholder="Tin No" ng-model="customer.tinNo" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': customer.address1.$invalid && (customer.address1.$dirty || customer.$submitted)}">
-								<label for="address1">Address Line 2</label> <input type="text"
-									class="form-control" id="address1" name="address1"
-									placeholder="Address Line 2" ng-model="customer.address1"
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': customer.state.$invalid && (customer.state.$dirty || customer.$submitted)}">
-								<label for="state">State</label> <input type="text"
-									class="form-control" id="state" name="state"
-									placeholder="State" ng-model="customer.state" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+						<div class="form-group"
+							ng-class="{'has-error': customerForm.panNo.$invalid && (customerForm.panNo.$dirty || customerForm.$submitted)}">
+							<label for="panNo">Pan No.</label> <input type="text"
+								class="form-control" id="panNo" name="panNo"
+								placeholder="Pan No." ng-model="customer.panNo" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
 
+						<div class="form-group"
+							ng-class="{'has-error': customerForm.phoneNo.$invalid && (customerForm.phoneNo.$dirty || customerForm.$submitted)}">
+							<label for="phoneNo">Phone No.</label> <input type="text"
+								class="form-control" id="phoneNo" name="phoneNo"
+								placeholder="Phone No." ng-model="customer.phoneNo" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
 
 					</div>
 
-				</form>
-				</ba-wizard-step> <ba-wizard-step title="Other Details" form="otherDetailsForm">
-				<form name="otherDetailsForm" novalidate>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.mobileNo.$invalid && (otherDetailsForm.mobileNo.$dirty || otherDetailsForm.$submitted)}">
-								<label for="mobileNo">Mobile No.</label> <input type="text"
-									class="form-control" id="mobileNo" name="mobileNo"
-									placeholder="Mobile No." ng-model="otherDetailsForm.mobileNo"
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group"
-								ng-class="{'has-error': otherDetailsForm.faxNo.$invalid && (otherDetailsForm.faxNo.$dirty || otherDetailsForm.$submitted)}">
-								<label for="faxNo">Fax No.</label> <input type="text"
-									class="form-control" id="faxNo" name="faxNo"
-									placeholder="Fax No." ng-model="otherDetailsForm.faxNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactPerson.$invalid && (otherDetailsForm.primaryContactPerson.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactPerson">Primary Contact Person</label>
-								<input type="text" class="form-control"
-									id="primaryContactPerson" name="primaryContactPerson"
-									placeholder="primaryContactPerson"
-									ng-model="otherDetailsForm.primaryContactPerson" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactDesignation.$invalid && (otherDetailsForm.primaryContactDesignation.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactDesignation">Designation</label> <input
-									type="text" class="form-control" id="primaryContactDesignation"
-									name="primaryContactDesignation" placeholder="Designation"
-									ng-model="otherDetailsForm.primaryContactDesignation" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactMobileNo.$invalid && (otherDetailsForm.primaryContactMobileNo.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactMobileNo">Primary Contact
-									Mobile No.</label> <input type="text" class="form-control"
-									id="primaryContactMobileNo" name="primaryContactMobileNo"
-									placeholder="Primary Contact Mobile No."
-									ng-model="otherDetailsForm.primaryContactMobileNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.privateClientNote.$invalid && (otherDetailsForm.privateClientNote.$dirty || otherDetailsForm.$submitted)}">
-								<label for="privateClientNote">Private Client Note</label>
-								<textarea type="text" class="form-control"
-									id="privateClientNote" name="privateClientNote"
-									placeholder="Private Client Note"
-									ng-model="otherDetailsForm.privateClientNote" required></textarea>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
+				</div>
+				</ng-form> </ba-wizard-step> <ba-wizard-step title="Billing Address Details" form="billingForm">
+				<ng-form name="billingForm" novalidate>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': billingForm.billAddress.$invalid && (billingForm.billAddress.$dirty || billingForm.$submitted)}">
+							<label for="billAddress">Address Line 1</label> <input
+								type="text" class="form-control" id="billAddress"
+								name="billAddress" placeholder="Address Line 1"
+								ng-model="customer.billAddress" required> <span
+								class="help-block error-block basic-block">Required</span>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactPhoneNo.$invalid && (otherDetailsForm.primaryContactPhoneNo.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactPhoneNo">Primary Contact Phone
-									No.</label> <input type="text" class="form-control"
-									id="primaryContactPhoneNo" name="primaryContactPhoneNo"
-									placeholder="Primary Contact Phone No."
-									ng-model="otherDetailsForm.primaryContactPhoneNo" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactSkype.$invalid && (otherDetailsForm.primaryContactSkype.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactSkype">Skype Id</label> <input
-									type="text" class="form-control" id="primaryContactSkype"
-									name="primaryContactSkype" placeholder="Skype Id"
-									ng-model="otherDetailsForm.primaryContactSkype" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+						<div class="form-group"
+							ng-class="{'has-error': billingForm.billCountry.$invalid && (billingForm.billCountry.$dirty || billingForm.$submitted)}">
+							<label for="billCountry">Country</label> <input type="text"
+								class="form-control" id="billCountry" name="billCountry"
+								placeholder="Country" ng-model="customer.billCountry" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
 
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.website.$invalid && (otherDetailsForm.website.$dirty || otherDetailsForm.$submitted)}">
-								<label for="website">Website</label> <input type="text"
-									class="form-control" id="website" name="website"
-									placeholder="Website" ng-model="otherDetailsForm.website" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.currency.$invalid && (otherDetailsForm.currency.$dirty || otherDetailsForm.$submitted)}">
-								<label for="currency">Currency</label> <input type="text"
-									class="form-control" id="currency" name="currency"
-									placeholder="Currency" ng-model="otherDetailsForm.currency"
-									required> <span
-									class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.primaryContactDepartment.$invalid && (otherDetailsForm.primaryContactDepartment.$dirty || otherDetailsForm.$submitted)}">
-								<label for="primaryContactDepartment">Department</label> <input
-									type="text" class="form-control" id="primaryContactDepartment"
-									name="currency" placeholder="Department"
-									ng-model="otherDetailsForm.primaryContactDepartment" required>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
-
-							<div class="form-group has-feedback"
-								ng-class="{'has-error': otherDetailsForm.otherClientNote.$invalid && (otherDetailsForm.otherClientNote.$dirty || otherDetailsForm.$submitted)}">
-								<label for="otherClientNote">Other Client Note</label>
-								<textarea type="text" class="form-control" id="otherClientNote"
-									name="currency" placeholder="Other Client Note"
-									ng-model="otherDetailsForm.otherClientNote" required></textarea>
-								<span class="help-block error-block basic-block">Required</span>
-							</div>
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': billingForm.billCity.$invalid && (billingForm.billCity.$dirty || billingForm.$submitted)}">
+							<label for="billCity">City</label> <input type="text"
+								class="form-control" id="billCity" name="billCity"
+								placeholder="City" ng-model="customer.billCity" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
 
 
+					</div>
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': billingForm.billAddress1.$invalid && (billingForm.billAddress1.$dirty || billingForm.$submitted)}">
+							<label for="billAddress1">Address Line 2</label> <input
+								type="text" class="form-control" id="billAddress1"
+								name="billAddress1" placeholder="Address Line 2"
+								ng-model="customer.billAddress1" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': billingForm.billState.$invalid && (billingForm.billState.$dirty || billingForm.$submitted)}">
+							<label for="billState">Sate</label> <input type="text"
+								class="form-control" id="billState" name="billState"
+								placeholder="State" ng-model="customer.billState" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
 
 					</div>
-				</form>
-				</ba-wizard-step> 
-				<ba-wizard-step title="Other Details" form="consigneeForm">
-
-				<form name="consigneeForm" novalidate>
-					<div class="row">
-
-						<div class="col-md-6">
-							<div class="form-group has-feedback">
-								<div class="col-md-8">
-									<ui-select ng-model="selectedConsignee.selected"
-										on-select="searchConsignee($item)" theme="bootstrap">
-									<ui-select-match placeholder="Search Consignee">{{$select.selected.color}}</ui-select-match>
-									<ui-select-choices
-										repeat="item in allConsignees | filter: $select.search|  limitTo: '20'">
-									<div>{{item.color}}</div>
-									<small>{{item.value}}</small> </ui-select-choices> </ui-select>
-								</div>
-								<div class="col-md-4">
-
-									<button type="button" class="btn btn-primary"
-										data-toggle="modal"
-										ng-click="open('app/pages/master/customer/consignee.html', 'lg')">
-										Add Consignee</button>
-								</div>
-							</div>
+				</div>
+				</ng-form> </ba-wizard-step> <ba-wizard-step title="Shipping Address Detail"
+					form="shippingForm"> <ng-form name="shippingForm"
+					novalidate>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customer.addresss.$invalid && (customer.address.$dirty || customer.$submitted)}">
+							<label for="address">Address Line 1</label> <input type="text"
+								class="form-control" id="address" ng-model="customer.address"
+								name="billAddress" placeholder="Address Line 1" required>
+							<span class="help-block error-block basic-block">Required</span>
 						</div>
 
-						<div class="col-md-6"></div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customer.country.$invalid && (customer.country.$dirty || customer.$submitted)}">
+							<label for="country">Country</label> <input type="text"
+								class="form-control" id="country" name="country"
+								placeholder="Country" ng-model="customer.country" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customer.city.$invalid && (customer.city.$dirty || customer.$submitted)}">
+							<label for="city">City</label> <input type="text"
+								class="form-control" id="city" name="city" placeholder="City"
+								ng-model="customer.city" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
 					</div>
-					
-				</form>
-				</ba-wizard-step> </ba-wizard>
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customer.address1.$invalid && (customer.address1.$dirty || customer.$submitted)}">
+							<label for="address1">Address Line 2</label> <input type="text"
+								class="form-control" id="address1" name="address1"
+								placeholder="Address Line 2" ng-model="customer.address1"
+								required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customer.state.$invalid && (customer.state.$dirty || customer.$submitted)}">
+							<label for="state">State</label> <input type="text"
+								class="form-control" id="state" name="state" placeholder="State"
+								ng-model="customer.state" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+					</div>
+
+				</div>
+
+				</ng-form> </ba-wizard-step> <ba-wizard-step title="Other Details" form="customerOtherDetails">
+				<ng-form name="customerOtherDetails" novalidate>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.mobileNo.$invalid && (customerOtherDetails.mobileNo.$dirty || customerOtherDetails.$submitted)}">
+							<label for="mobileNo">Mobile No.</label> <input type="text"
+								class="form-control" id="mobileNo" name="mobileNo"
+								placeholder="Mobile No." ng-model="customer.mobileNo" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group"
+							ng-class="{'has-error': customerOtherDetails.faxNo.$invalid && (customerOtherDetails.faxNo.$dirty || customerOtherDetails.$submitted)}">
+							<label for="faxNo">Fax No.</label> <input type="text"
+								class="form-control" id="faxNo" name="faxNo"
+								placeholder="Fax No." ng-model="customer.faxNo" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactPerson.$invalid && (customerOtherDetails.primaryContactPerson.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactPerson">Primary Contact Person</label>
+							<input type="text" class="form-control" id="primaryContactPerson"
+								name="primaryContactPerson" placeholder="primaryContactPerson"
+								ng-model="customer.primaryContactPerson" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactDesignation.$invalid && (customerOtherDetails.primaryContactDesignation.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactDesignation">Designation</label> <input
+								type="text" class="form-control" id="primaryContactDesignation"
+								name="primaryContactDesignation" placeholder="Designation"
+								ng-model="customer.primaryContactDesignation" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactMobileNo.$invalid && (customerOtherDetails.primaryContactMobileNo.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactMobileNo">Primary Contact
+								Mobile No.</label> <input type="text" class="form-control"
+								id="primaryContactMobileNo" name="primaryContactMobileNo"
+								placeholder="Primary Contact Mobile No."
+								ng-model="customer.primaryContactMobileNo" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.privateClientNote.$invalid && (customerOtherDetails.privateClientNote.$dirty || customerOtherDetails.$submitted)}">
+							<label for="privateClientNote">Private Client Note</label>
+							<textarea class="form-control" id="privateClientNote"
+								name="privateClientNote" placeholder="Private Client Note"
+								ng-model="customer.privateClientNote" required></textarea>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+					</div>
+					<div class="col-md-6">
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactPhoneNo.$invalid && (customerOtherDetails.primaryContactPhoneNo.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactPhoneNo">Primary Contact Phone
+								No.</label> <input type="text" class="form-control"
+								id="primaryContactPhoneNo" name="primaryContactPhoneNo"
+								placeholder="Primary Contact Phone No."
+								ng-model="customer.primaryContactPhoneNo" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactSkype.$invalid && (customerOtherDetails.primaryContactSkype.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactSkype">Skype Id</label> <input
+								type="text" class="form-control" id="primaryContactSkype"
+								name="primaryContactSkype" placeholder="Skype Id"
+								ng-model="customer.primaryContactSkype" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.website.$invalid && (customerOtherDetails.website.$dirty || customerOtherDetails.$submitted)}">
+							<label for="website">Website</label> <input type="text"
+								class="form-control" id="website" name="website"
+								placeholder="Website" ng-model="customer.website" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.currency.$invalid && (customerOtherDetails.currency.$dirty || customerOtherDetails.$submitted)}">
+							<label for="currency">Currency</label> <input type="text"
+								class="form-control" id="currency" name="currency"
+								placeholder="Currency" ng-model="customer.currency" required>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.primaryContactDepartment.$invalid && (customerOtherDetails.primaryContactDepartment.$dirty || customerOtherDetails.$submitted)}">
+							<label for="primaryContactDepartment">Department</label> <input
+								type="text" class="form-control" id="primaryContactDepartment"
+								name="currency" placeholder="Department"
+								ng-model="customer.primaryContactDepartment" required> <span
+								class="help-block error-block basic-block">Required</span>
+						</div>
+
+						<div class="form-group has-feedback"
+							ng-class="{'has-error': customerOtherDetails.otherClientNote.$invalid && (customerOtherDetails.otherClientNote.$dirty || customerOtherDetails.$submitted)}">
+							<label for="otherClientNote">Other Client Note</label>
+							<textarea type="text" class="form-control" id="otherClientNote"
+								name="currency" placeholder="Other Client Note"
+								ng-model="customer.otherClientNote" required></textarea>
+							<span class="help-block error-block basic-block">Required</span>
+						</div>
+
+
+					</div>
+
+				</div>
+				</ng-form> </ba-wizard-step> <ba-wizard-step title="Consignee Details" form="consigneeForm">
+
+				<ng-form name="consigneeForm" novalidate>
+				<div class="row">
+
+					<div class="col-md-6">
+						<div class="form-group has-feedback">
+							<div class="col-md-8">
+								<ui-select ng-model="selectedConsignee.selected"
+									on-select="searchConsignee($item)" theme="bootstrap">
+								<ui-select-match placeholder="Search Consignee">{{$select.selected.color}}</ui-select-match>
+								<ui-select-choices
+									repeat="item in allConsignees | filter: $select.search|  limitTo: '20'">
+								<div>{{item.color}}</div>
+								<small>{{item.value}}</small> </ui-select-choices> </ui-select>
+							</div>
+							<div class="col-md-4">
+
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal"
+									ng-click="open('app/pages/master/customer/consignee.html', 'lg')">
+									Add Consignee</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6"></div>
+				</div>
+
+				</ng-form> </ba-wizard-step> </ba-wizard>
 			</div>
 		</div>
 	</div>
