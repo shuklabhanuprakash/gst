@@ -42,7 +42,8 @@
         }
 
         function isComplete() {
-          return $scope.form ? $scope.form.$valid : true;
+        	return true;
+          //return $scope.form ? $scope.form.$valid : true;
         }
 
         function isAvailiable() {

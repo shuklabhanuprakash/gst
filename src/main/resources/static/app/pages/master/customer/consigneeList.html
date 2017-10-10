@@ -1,10 +1,10 @@
-<table st-table="customerList" st-safe-src="customers"
+<table st-table="customerList" st-safe-src="consignees"
 	class="table table-striped">
 	<thead>
 		<tr>
-			<th><input st-search="" class="form-control"
+			<th ng-hide="true"><input st-search="" class="form-control"
 				placeholder="Search Here" type="text" /></th>
-			<th colspan="2">
+			<th colspan="2" ng-hide="true">
 				<div class="pull-right">
 					<label> Records Per Page</label> <input class="form-control"
 						placeholder="" type="text" ng-model="itemsByPage" />
@@ -14,20 +14,20 @@
 
 		<tr>
 			<th st-sort="$index">SrNo.</th>
-			<th st-sort="buyerName">Customer Name</th>
-			<th st-sort="gstID">GSTIN</th>
-			<th st-sort="stateCode">State Code</th>
-			<th st-sort="vatNo">Vat No.</th>
+			<th st-sort="itemName">Name</th>
+			<th st-sort="goodsDesc">Description</th>
+			<th st-sort="hsnCode">HSN Code</th>
+			<th st-sort="taxRate">Tax rate</th>
 			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="customer in customerList track by $index">
 			<td>{{$index+1}}</td>
-			<td>{{customer.buyerName}}</td>
-			<td>{{customer.gstID}}</td>
-			<td>{{customer.stateCode}}</td>
-			<td>{{customer.vatNo}}</td>
+			<td>{{customer.itemName}}</td>
+			<td>{{customer.goodsDesc}}</td>
+			<td>{{customer.hsnCode}}</td>
+			<td>{{customer.taxRate}}</td>
 			<td><a href=""><i class="fa fa-trash-o text-danger"
 					aria-hidden="true" ng-click="deleteCustomer(customer.id)"></i></a> <a
 				href=""><i class="fa fa-pencil-square-o" aria-hidden="true"

@@ -6,6 +6,7 @@ app.controller("CustomerController",function($scope,$http,$state){
 		$http.get("/gst/buyers").then(function(response){
 			console.log(response)
 			$scope.customers=response.data;
+			console.log($scope.customers);
 			
 		},function(error){
 			console.log("error",error);
@@ -24,7 +25,7 @@ app.controller("CustomerController",function($scope,$http,$state){
 	}
 	
 	
-	$scope.editProduct=function(customerId){
+	$scope.editCustomer=function(customerId){
 		$state.go("master.customer.customerRegistration", { "id": customerId });
 		
 		
@@ -34,6 +35,8 @@ app.controller("CustomerController",function($scope,$http,$state){
 		getCustomers();
 		$state.go("master.customer.customerList");
 	}
+	
+	
 	
 	
 	

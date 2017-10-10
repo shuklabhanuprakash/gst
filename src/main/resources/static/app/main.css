@@ -6404,3 +6404,8 @@ label.todo-checkbox {
    border: 3px solid #209e91;
    transition: all .3s ease-in-out;
 }
+
+
+.heading-padding{
+	    padding: 10px 26px 10px;
+}

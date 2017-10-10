@@ -67,7 +67,13 @@ public class BuyerController {
 	public void deleteConsignee(@RequestParam("id") Integer id) {
 		consigneeService.deleteConsignee(id);
 	}
-
+	
+	@RequestMapping(value = "/consigneeByBuyerId/{id}", method = RequestMethod.GET)
+	public void getConsigneeByBuyerId(@PathVariable("id") Integer id) {
+		consigneeService.getConsigneeByBuyerId(id);
+	}
+	
+	
 	/*@RequestMapping(value = "/createInvoice", method = RequestMethod.GET)
 	public String createInvoice(Model model) {
 		model.addAttribute("customerList", buyerService.getBuyers());

@@ -89,9 +89,6 @@ public class BuyerRequest {
 	@Column  (name="CURRENCY")
 	private String currency;
 	
-	
-	
-
 	@OneToMany(mappedBy = "buyerRequest", cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<ConsigneeRequest> consigneeRequests;
@@ -392,20 +389,5 @@ public class BuyerRequest {
 		this.otherClientNote = otherClientNote;
 	}
 
-	/*public InvoiceDetailsRequest getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(InvoiceDetailsRequest customerId) {
-		this.customerId = customerId;
-	}
-
-	public InvoiceDetailsRequest getConsigneeId() {
-		return consigneeId;
-	}
-
-	public void setConsigneeId(InvoiceDetailsRequest consigneeId) {
-		this.consigneeId = consigneeId;
-	}*/
 
 }

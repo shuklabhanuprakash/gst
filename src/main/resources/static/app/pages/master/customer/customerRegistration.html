@@ -345,7 +345,7 @@
 
 					<div class="col-md-6">
 						<div class="form-group has-feedback">
-							<div class="col-md-8">
+							<!-- <div class="col-md-8">
 								<ui-select ng-model="selectedConsignee.selected"
 									on-select="searchConsignee($item)" theme="bootstrap">
 								<ui-select-match placeholder="Search Consignee">{{$select.selected.color}}</ui-select-match>
@@ -353,7 +353,7 @@
 									repeat="item in allConsignees | filter: $select.search|  limitTo: '20'">
 								<div>{{item.color}}</div>
 								<small>{{item.value}}</small> </ui-select-choices> </ui-select>
-							</div>
+							</div> -->
 							<div class="col-md-4">
 
 								<button type="button" class="btn btn-primary"
@@ -373,7 +373,20 @@
 							<button type="button" class="btn btn-primary"
 								ng-click="saveCustomer()">Submit</button>
 						</div>
-					</div></ng-form>
+					</div>
+				</ng-form>
+					
+					<div class="row">
+					<hr>
+					<h2 class="panel-title heading-padding">Consignee List</h2>
+					</div>
+					
+					<div class="row">
+					
+					<div ng-include="'app/pages/master/customer/consigneeList.html'"></div>
+					
+					</div>
+					
 		</ba-wizard-step> 
 	
 	
