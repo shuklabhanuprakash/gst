@@ -91,7 +91,7 @@ public class BuyerRequest {
 	
 	@OneToMany(mappedBy = "buyerRequest", cascade = CascadeType.ALL)
 	@JsonManagedReference
-	private List<ConsigneeRequest> consigneeRequests;
+	private List<ConsigneeRequest> consignees;
 
 	/*@OneToOne(mappedBy = "customerId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private InvoiceDetailsRequest customerId;
@@ -227,12 +227,14 @@ public class BuyerRequest {
 		this.taxCat = taxCat;
 	}
 
-	public List<ConsigneeRequest> getConsigneeRequests() {
-		return consigneeRequests;
+	
+
+	public List<ConsigneeRequest> getConsignees() {
+		return consignees;
 	}
 
-	public void setConsigneeRequests(List<ConsigneeRequest> consigneeRequests) {
-		this.consigneeRequests = consigneeRequests;
+	public void setConsignees(List<ConsigneeRequest> consignees) {
+		this.consignees = consignees;
 	}
 
 	public String getPrimaryContactPerson() {

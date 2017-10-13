@@ -19,7 +19,7 @@ app.controller("ProductRegistrationController",function($scope,$http,$stateParam
 	}
 	
 	$scope.saveProduct=function(){
-		$http.post("/gst/product",$scope.product).then(function(response){
+		$http.post("/gst/buyer",$scope.product).then(function(response){
 			console.log(response)
 			const toasterTitle="Product";
 			const toasterMsg="registered successfully";
