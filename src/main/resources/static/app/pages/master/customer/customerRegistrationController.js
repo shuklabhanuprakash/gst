@@ -118,7 +118,7 @@ app.controller("CustomerRegistrationController",function($scope,$http,$state,$st
 	    		
 	    		$http.post("/gst/consignee",$scope.consignee).then(function(response){
 	    			$scope.consignees=response.data;
-	    			
+	    			$scope.consignee={};
 	    			console.log("$scope.consignees  ",$scope.consignees)
 	    		});
 	    	}

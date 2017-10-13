@@ -21,7 +21,7 @@
 	          abstract: true,
 	          title: 'Master',
 	          sidebarMeta: {
-	            icon: 'ion-android-laptop',
+	            icon: 'fa fa-university',
 	            order: 200,
 	          },
 	        });
