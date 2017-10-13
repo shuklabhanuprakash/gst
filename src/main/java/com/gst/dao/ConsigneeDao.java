@@ -10,6 +10,8 @@ import com.gst.model.ConsigneeRequest;
 public interface ConsigneeDao extends CrudRepository<ConsigneeRequest, Integer>{
 	
 	public List<ConsigneeRequest> findByBuyerRequest(BuyerRequest request);
+
+	public ConsigneeRequest save(ConsigneeRequest requestObj);
 	 
 	//public ConsigneeRequest findOneConsigneeRequest(Integer id);
 

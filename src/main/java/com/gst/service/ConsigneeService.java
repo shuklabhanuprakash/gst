@@ -17,4 +17,6 @@ public interface ConsigneeService {
 	
 	public ConsigneeRequest getConsigneeById(Integer id);
 
+	public void saveConsignee(ConsigneeRequest requestObj);
+
 }

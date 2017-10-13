@@ -54,4 +54,10 @@ public class ConsigneeServiceImpl implements ConsigneeService {
 	public ConsigneeRequest getConsigneeById(Integer id) {
 		return consigneeDao.findOne(id);
 	}
+
+	@Override
+	public void saveConsignee(ConsigneeRequest requestObj) {
+		ConsigneeRequest consignee = consigneeDao.save(requestObj);
+		System.out.println(consignee);
+	}
 }

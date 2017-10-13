@@ -58,7 +58,7 @@ public class BuyerController {
 	}
 
 	@GetMapping(value = "/consignee")
-	public ResponseEntity<ConsigneeRequest> editConsignee(@RequestParam("id") Integer id) {
+	public ResponseEntity<ConsigneeRequest> getConsigneeById(@RequestParam("id") Integer id) {
 		return ResponseEntity.ok(consigneeService.getConsigneeById(id)) ;
 
 	}
@@ -69,39 +69,18 @@ public class BuyerController {
 	}
 	
 	@RequestMapping(value = "/consigneeByBuyerId/{id}", method = RequestMethod.GET)
-	public void getConsigneeByBuyerId(@PathVariable("id") Integer id) {
-		consigneeService.getConsigneeByBuyerId(id);
+	public ResponseEntity<List<ConsigneeRequest>> getConsigneeByBuyerId(@PathVariable("id") Integer id) {
+		return ResponseEntity.ok(consigneeService.getConsigneeByBuyerId(id));
 	}
 	
 	
-	/*@RequestMapping(value = "/createInvoice", method = RequestMethod.GET)
-	public String createInvoice(Model model) {
-		model.addAttribute("customerList", buyerService.getBuyers());
-		model.addAttribute("productList", productService.getProducts());
-		return "createInvoice1";
+	@PostMapping("/consignee")
+	public ResponseEntity<List<ConsigneeRequest>> saveConsignee(@RequestBody ConsigneeRequest requestObj) {
+		
+		consigneeService.saveConsignee(requestObj);
+		
+		return  ResponseEntity.ok(consigneeService.getConsigneeByBuyerId(requestObj.getBuyerRequest().getId()));
 	}
+	
 
-	@RequestMapping(value = "/getCustomerById", method = RequestMethod.GET)
-	@ResponseBody
-	public ResponseEntity<BuyerRequest> getCustomerById(@RequestParam("id") Integer id) {
-		System.out.println("listExistingUser is called in controller");
-		BuyerRequest buyer = buyerService.getCustomerById(id);
-		// consigneeService.getConsigneeById(id);
-		return new ResponseEntity<BuyerRequest>(buyer, HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/getHSNcodeById", method = RequestMethod.GET)
-	@ResponseBody
-	public ResponseEntity<ProductRequest> getHSNcodeById(@RequestParam("id") Integer id) {
-		ProductRequest product = productService.getProduct(id);
-		return new ResponseEntity<ProductRequest>(product, HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/getConsigneeById", method = RequestMethod.GET)
-	@ResponseBody
-	public ResponseEntity<ConsigneeRequest> getConsigneeById(@RequestParam("id") Integer id) {
-		ConsigneeRequest consignee = consigneeService.getConsigneeById(id);
-		return new ResponseEntity<ConsigneeRequest>(consignee, HttpStatus.OK);
-	}
-*/
 }

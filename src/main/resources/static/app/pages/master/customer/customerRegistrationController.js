@@ -7,7 +7,7 @@ app.controller("CustomerRegistrationController",function($scope,$http,$state,$st
 	$scope.customer.consignees=[];
 	$scope.consignee={};
 	$scope.searchConsignee=function(item){
-		$scope.selectedConsignee.selected = item;
+	$scope.selectedConsignee.selected = item;
 	}
 	
 	const getBuyer=function(id){
@@ -44,10 +44,15 @@ app.controller("CustomerRegistrationController",function($scope,$http,$state,$st
 	}
 	
 	$scope.saveCustomer=function(){
-		console.log("Consignee ",$scope.consignee)
-		if($scope.consignee){
+		console.log("customer ------------------------------   ",$scope.customer)
+		
+		console.log("Consignee -------------------------------  ",$scope.consignee)
+		
+		
+		if(!angular.equals({}, $scope.consignee)){
 			$scope.customer.consignees.push($scope.consignee);
-			
+		}else{
+			$scope.consignee=undefined;
 		}
 		
 		$http.post("/gst/buyer",$scope.customer).then(function(response){
@@ -84,17 +89,51 @@ app.controller("CustomerRegistrationController",function($scope,$http,$state,$st
 	        templateUrl: page,
 	        size: size,
 	        resolve: {
-	          items: function () {
+	        	consignee: function () {
 	        	  
 	        	  console.log("$scope.items  ",$scope.consignee)
-	            return $scope.items;
+	            return $scope.consignee;
 	          }
-	        }
+	        },
+	        scope:$scope
 	      });
 	      
 	      console.log("consigneee in show consignee     ",$scope.consignee)
 	    };
 	    
-	  
+	    $scope.deleteConsignee=function(consignee){
+		//
+		$http.get("deleteConsignee?id="+consignee.id).then(function(response){
+			getConsignee($scope.customer.id);
+			
+		},function(error){
+			console.log("error",error);
+		});
+		
+	}
+	    
+	    $scope.saveConsignee=function(consignee){
+	    	if(consignee.id){
+	    		$scope.consignee.buyerRequest=$scope.customer;
+	    		
+	    		$http.post("/gst/consignee",$scope.consignee).then(function(response){
+	    			$scope.consignees=response.data;
+	    			
+	    			console.log("$scope.consignees  ",$scope.consignees)
+	    		});
+	    	}
+	    	//$uibModal.close();
+	    	
+	    }
+	
+	    $scope.editConsignee=function(id){
+	    	
+	    	$scope.consignee=_.find($scope.consignees,function(each){
+	    		return each.id === id;
+	    	})
+	    	$scope.open('app/pages/master/customer/consignee.html', 'lg');
+	    }
+	    
+	    
 	
 });
