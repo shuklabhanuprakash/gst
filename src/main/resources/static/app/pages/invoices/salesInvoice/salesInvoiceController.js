@@ -3,6 +3,7 @@ app.controller("SalesInvoiceController",function($scope,$http,$state,toastr,
 	
 	$scope.sellers=[];
 	var openedToasts = [];
+	$scope.salesInvoices=[];
 	 var defaultConfig = angular.copy(toastrConfig);
 	$scope.options = {
 		autoDismiss : false,
@@ -23,12 +24,14 @@ app.controller("SalesInvoiceController",function($scope,$http,$state,toastr,
 	};
 	
 	
-	$scope.$on('$stateChangeStart', function() {getsalesInvoices(); });
+	$scope.$on('$stateChangeStart', function() {
+		console.log("STATE CHANGE")
+		getsalesInvoices(); });
 	
 	const getsalesInvoices =function(){
 		$http.get("/gst/salesInvoices").then(function(response){
 			console.log(response)
-			$scope.salesInvoice=response.data;
+			$scope.salesInvoices=response.data;
 			
 		},function(error){
 			console.log("error",error);
@@ -36,7 +39,7 @@ app.controller("SalesInvoiceController",function($scope,$http,$state,toastr,
 		
 	}
 	
-	$scope.deleteCompany=function(id){
+	$scope.deleteSalesInvoice=function(id){
 		$http.get("/gst/deleteSalesInvoice/"+id).then(function(response){
 			console.log(response)
 			const toasterTitle="Sales Invoice";

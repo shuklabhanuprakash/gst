@@ -1,0 +1,50 @@
+<table st-table="salesInvoiceList" st-safe-src="salesInvoices"
+	class="table table-striped">
+	<thead>
+		<tr>
+			<th><input st-search="" class="form-control"
+				placeholder="Search Here" type="text" /></th>
+			<th colspan="2">
+				<div class="pull-right">
+					<label> Records Per Page</label> <input class="form-control"
+						placeholder="" type="text" ng-model="itemsByPage" />
+				</div>
+			</th>
+		</tr>
+
+		<tr>
+			<th st-sort="$index"><strong>SrNo.</strong></th>
+			<th st-sort="sellerName"><strong>Seller Name</strong></th>
+			<th st-sort="companyGstId"><strong>Company GST No.</strong></th>
+			<th st-sort="orderNo"><strong>Order No.</strong></th>
+			<th st-sort="orderDate"><strong>Order Date</strong></th>
+			<th st-sort="productQuantity"><strong>Product Quantity</strong></th>
+			<th st-sort="productUnitPrice"><strong>Product Unit Price</strong></th>
+			<th st-sort="totalPayment"><strong>Total Payment</strong></th>
+			<th><strong>Action</strong></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="invoice in salesInvoiceList track by $index">
+			<td>{{$index+1}}</td>
+			<td>{{invoice.salesPersonsName}}</td>
+			<td>{{invoice.companyGstId}}</td>
+			<td>{{invoice.orderNo}}</td>
+			<td>{{invoice.orderDate}}</td>
+			<td>{{invoice.productQuantity}}</td>
+			<td>{{invoice.productUnitPrice}}</td>
+			<td>{{invoice.totalPayment}}</td>
+			<td><a href=""><i class="fa fa-trash-o text-danger"
+					aria-hidden="true" ng-click="deleteCompany(company.id)"></i></a>&nbsp;&nbsp; <a
+				href=""><i class="fa fa-pencil-square-o" aria-hidden="true"
+					ng-click="editCompany(company.id)"></i></a></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="100%" class="text-center">
+				<div st-pagination="" st-items-by-page="itemsByPage"></div>
+			</td>
+		</tr>
+	</tfoot>
+</table>

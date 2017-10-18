@@ -1,0 +1,84 @@
+<div ng-init="init()" ng-controller="SalesInvoiceRegistrationController">
+
+<ng-form name="productForm" novalidate>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.itemName.$invalid && !productForm.itemName.$pristine }">
+      <label for="itemName">Product Name</label>
+      <input type="text" ng-model="product.itemName" class="form-control" name="itemName" placeholder="Product Name" required />
+      <p ng-show="productForm.itemName.$invalid && !productForm.itemName.$pristine" class="help-block">Product Name is required.</p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.hsnCode.$invalid && !productForm.hsnCode.$pristine }">
+      <label for="hsnCode">HSN Code</label>
+      <input type="text" ng-model="product.hsnCode"  class="form-control" name="hsnCode" placeholder="HSN Code" required />
+      <p ng-show="productForm.hsnCode.$invalid && !productForm.hsnCode.$pristine" class="help-block">HSN Code is required.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="sacCode">SAC Code</label>
+      <input type="text" ng-model="product.sacCode" class="form-control" name="sacCode" placeholder="SAC Code" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="sku">SKU</label>
+      <input type="text" ng-model="product.sku" class="form-control" name="sku" placeholder="SKU" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.unitOfMeasure.$invalid && !productForm.unitOfMeasure.$pristine }">
+      <label for="unitOfMeasure">Unit Of Measure</label>
+      <input type="text" ng-model="product.unitOfMeasure" class="form-control" name="unitOfMeasure" placeholder="Unit Of Measure" required />
+      <p ng-show="productForm.unitOfMeasure.$invalid && !productForm.unitOfMeasure.$pristine" class="help-block">Unit Of Measure is required.</p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.itemPrice.$invalid && !productForm.itemPrice.$pristine }">
+      <label for="itemPrice">Price Of Product</label>
+      <input type="text"  ng-model="product.itemPrice" ng-pattern="/^[0-9]+([,.][0-9]+)?$/" class="form-control" name="itemPrice" placeholder="Price of product" required />
+      <p ng-show="productForm.itemPrice.$invalid && !productForm.itemPrice.$pristine" class="help-block">Price of product is required/invalid.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.cess.$invalid && !productForm.cess.$pristine }">
+      <label for="cess">CESS</label>
+      <input type="text"  ng-model="product.cess" class="form-control" ng-pattern="/^[0-9]+([,.][0-9]+)?$/" name="cess" placeholder="CESS">
+       <p ng-show="productForm.cess.$invalid && !productForm.cess.$pristine" class="help-block">CESS is invalid.</p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" ng-class="{ 'has-error' : productForm.taxRate.$invalid && !productForm.taxRate.$pristine }">
+      <label for="taxRate">Tax Rate</label>
+      <input type="text" ng-model="product.taxRate" ng-pattern="/^[0-9]+([,.][0-9]+)?$/" class="form-control" name="taxRate" placeholder="Tax Rate" required />
+      <p ng-show="productForm.taxRate.$invalid && !productForm.taxRate.$pristine" class="help-block">Tax rate is required/invalid.</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="itemDesc">Product Description</label>
+     <textarea class="form-control" ng-model="product.goodsDesc" name="itemDesc" placeholder="Product Description"></textarea>
+    </div>
+  </div>
+  <div class="col-sm-6">
+   
+  </div>
+</div>
+  
+  <button type="submit" ng-click="saveProduct()" ng-disabled="productForm.$invalid" class="btn btn-success">Save</button>
+  <button type="button" ng-click="goToProductList()" class="btn btn-default">cancel</button>
+</ng-form>
+</div>
+
+
